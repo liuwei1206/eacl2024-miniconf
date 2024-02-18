@@ -1,0 +1,19 @@
+[2024-02-18 21:43:16,088][werkzeug][WARNING] -  * Debugger is active!
+[2024-02-18 21:43:16,100][werkzeug][INFO] -  * Debugger PIN: 795-966-722
+[2024-02-18 21:43:18,981][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:18] "[32mGET / HTTP/1.1[0m" 302 -
+[2024-02-18 21:43:19,059][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /index.html HTTP/1.1" 200 -
+[2024-02-18 21:43:19,145][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/Lato.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,154][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/lazy_load.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,154][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/main.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,156][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/Exo.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,159][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/Cuprum.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,160][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/typeahead.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,160][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/chats-modal.css HTTP/1.1" 200 -
+[2024-02-18 21:43:19,166][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/js/typeahead.bundle.js HTTP/1.1" 200 -
+[2024-02-18 21:43:19,168][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/images/emnlp2023/emnlp-2023-logo.png HTTP/1.1" 200 -
+[2024-02-18 21:43:19,170][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/js/pdf_render.js HTTP/1.1" 200 -
+[2024-02-18 21:43:19,171][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/js/lazy_load.js HTTP/1.1" 200 -
+[2024-02-18 21:43:19,175][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/js/highly-active-chats.js HTTP/1.1" 200 -
+[2024-02-18 21:43:19,191][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/images/eacl2024/header.png HTTP/1.1" 200 -
+[2024-02-18 21:43:19,215][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/Lato-Regular.ttf HTTP/1.1" 200 -
+[2024-02-18 21:43:19,216][werkzeug][INFO] - 192.168.178.60 - - [18/Feb/2024 21:43:19] "GET /static/css/Lato-Black.ttf HTTP/1.1" 200 -
