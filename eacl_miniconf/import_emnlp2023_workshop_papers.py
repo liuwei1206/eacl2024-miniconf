@@ -7,8 +7,8 @@ import yaml
 import typer
 from pydantic import BaseModel
 
-from emnlp_miniconf.data import Paper, WORKSHOP, AnthologyAuthor
-from emnlp_miniconf.import_emnlp2023 import TLDR_LENGTH
+from eacl_miniconf.data import Paper, WORKSHOP, AnthologyAuthor
+from eacl_miniconf.import_eacl2023 import TLDR_LENGTH
 
 CUSTOM_PAPER_YML = {
     Path("workshop-data/DISRPT"): Path("workshop-data/DISRPT/data"),
@@ -64,7 +64,7 @@ class AnthologyWorkshop(BaseModel):
 
 def main(
     workshop_data_dir: Path = Path("workshop-data"),
-    output_dir: Path = Path("data/emnlp_2023/data"),
+    output_dir: Path = Path("data/eacl_2024/data"),
 ):
     workshops: List[AnthologyWorkshop] = []
     workshop_papers: List[Paper] = []

@@ -21,7 +21,7 @@ from openpyxl import load_workbook
 import sys
 sys.path.append('/Users/linyihang/Desktop/emnlp-2023-miniconf')
 
-from emnlp_miniconf.data import (
+from eacl_miniconf.data import (
     PLENARIES,
     TUTORIALS,
     WORKSHOPS,
@@ -41,7 +41,7 @@ from emnlp_miniconf.data import (
     name_to_id,
     AnthologyAuthor,
 )
-from emnlp_miniconf.import_booklet_emnlp2023 import Booklet
+from eacl_miniconf.import_booklet_eacl2024 import Booklet
 
 logging.basicConfig(
     format="%(message)s",
@@ -201,7 +201,7 @@ def underline_paper_id_to_sheets_id(paper_id: Union[str, int]) -> str:
         return paper_id
 
 
-class Emnlp2023Parser:
+class Eacl2023Parser:
     def __init__(
         self,
         *,
@@ -210,36 +210,36 @@ class Emnlp2023Parser:
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
         extras_xlsx_path: Path,
-        emnlp_main_long_proceedings_yaml_path: Path,
-        emnlp_main_short_proceedings_yaml_path: Path,
-        emnlp_main_findings_proceedings_yaml_path: Path,
-        emnlp_demo_proceedings_yaml_path: Path,
-        emnlp_industry_proceedings_yaml_path: Path,
-        emnlp_srw_proceedings_yaml_path: Path,
+        eacl_main_long_proceedings_yaml_path: Path,
+        eacl_main_short_proceedings_yaml_path: Path,
+        eacl_main_findings_proceedings_yaml_path: Path,
+        eacl_demo_proceedings_yaml_path: Path,
+        eacl_industry_proceedings_yaml_path: Path,
+        eacl_srw_proceedings_yaml_path: Path,
         workshop_papers_yaml_path: Path,
         workshops_yaml_path: Path,
         booklet_json_path: Path,
         socials_json_path: Path,
         keywords_csv_path: Path,
-        emnlp_anthology_prefix: str,
+        eacl_anthology_prefix: str,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
         self.virtual_tsv_path = virtual_tsv_path
         self.spotlight_tsv_path = spotlight_tsv_path
         self.extras_xlsx_path = extras_xlsx_path
-        self.emnlp_main_long_proceedings_yaml_path = emnlp_main_long_proceedings_yaml_path
-        self.emnlp_main_short_proceedings_yaml_path = emnlp_main_short_proceedings_yaml_path
-        self.emnlp_main_findings_proceedings_yaml_path = emnlp_main_findings_proceedings_yaml_path
-        self.emnlp_demo_proceedings_yaml_path = emnlp_demo_proceedings_yaml_path
-        self.emnlp_industry_proceedings_yaml_path = emnlp_industry_proceedings_yaml_path
-        self.emnlp_srw_proceedings_yaml_path = emnlp_srw_proceedings_yaml_path
+        self.eacl_main_long_proceedings_yaml_path = eacl_main_long_proceedings_yaml_path
+        self.eacl_main_short_proceedings_yaml_path = eacl_main_short_proceedings_yaml_path
+        self.eacl_main_findings_proceedings_yaml_path = eacl_main_findings_proceedings_yaml_path
+        self.eacl_demo_proceedings_yaml_path = eacl_demo_proceedings_yaml_path
+        self.eacl_industry_proceedings_yaml_path = eacl_industry_proceedings_yaml_path
+        self.eacl_srw_proceedings_yaml_path = eacl_srw_proceedings_yaml_path
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
         self.socials_json_path = socials_json_path
         self.keywords_csv_path = keywords_csv_path
-        self.emnlp_anthology_prefix = emnlp_anthology_prefix
+        self.eacl_anthology_prefix = eacl_anthology_prefix
         self.booklet: Booklet = Booklet.from_booklet_data(
             booklet_json_path, workshops_yaml_path
         )
@@ -304,24 +304,24 @@ class Emnlp2023Parser:
     
     def get_anthology_urls(self, paper_type: str, paper_length: str, anthology_publication_id: str):
         if paper_type == 'demo':
-            anthology_url = self.emnlp_anthology_prefix + f"2023.emnlp-demo.{anthology_publication_id}"
-            paper_pdf = self.emnlp_anthology_prefix + f"2023.emnlp-demo.{anthology_publication_id}.pdf"
+            anthology_url = self.eacl_anthology_prefix + f"2024.eacl-demo.{anthology_publication_id}"
+            paper_pdf = self.eacl_anthology_prefix + f"2024.eacl-demo.{anthology_publication_id}.pdf"
         elif paper_type == 'industry':
-            anthology_url = self.emnlp_anthology_prefix + f"2023.emnlp-industry.{anthology_publication_id}"
-            paper_pdf = self.emnlp_anthology_prefix + f"2023.emnlp-industry.{anthology_publication_id}.pdf"
+            anthology_url = self.eacl_anthology_prefix + f"2024.eacl-industry.{anthology_publication_id}"
+            paper_pdf = self.eacl_anthology_prefix + f"2024.eacl-industry.{anthology_publication_id}.pdf"
         elif paper_type == 'srw':
-            anthology_url = self.emnlp_anthology_prefix + f"2023.emnlp-srw.{anthology_publication_id}"
-            paper_pdf = self.emnlp_anthology_prefix + f"2023.emnlp-srw.{anthology_publication_id}.pdf"
+            anthology_url = self.eacl_anthology_prefix + f"2024.eacl-srw.{anthology_publication_id}"
+            paper_pdf = self.eacl_anthology_prefix + f"2024.eacl-srw.{anthology_publication_id}.pdf"
         elif paper_type == 'findings':
-            anthology_url = self.emnlp_anthology_prefix + f"2023.findings-emnlp.{anthology_publication_id}"
-            paper_pdf = self.emnlp_anthology_prefix + f"2023.findings-emnlp.{anthology_publication_id}.pdf"
+            anthology_url = self.eacl_anthology_prefix + f"2024.findings-eacl.{anthology_publication_id}"
+            paper_pdf = self.eacl_anthology_prefix + f"2024.findings-eacl.{anthology_publication_id}.pdf"
         else:
-            anthology_url = self.emnlp_anthology_prefix + f"2023.emnlp-{paper_length}.{anthology_publication_id}"
-            paper_pdf = self.emnlp_anthology_prefix + f"2023.emnlp-{paper_length}.{anthology_publication_id}.pdf"
+            anthology_url = self.eacl_anthology_prefix + f"2024.eacl-{paper_length}.{anthology_publication_id}"
+            paper_pdf = self.eacl_anthology_prefix + f"2024.eacl-{paper_length}.{anthology_publication_id}.pdf"
         return anthology_url, paper_pdf
     
     def _parse_keywords(self):
-        df = pd.read_csv('data/emnlp_2023/data/keywords.csv', sep=',').fillna("")
+        df = pd.read_csv('data/eacl_2024/data/keywords.csv', sep=',').fillna("")
         for _, r in df.iterrows():
             submission_id = r['Submission ID']
             paper_id = f'P{submission_id}'
@@ -346,8 +346,8 @@ class Emnlp2023Parser:
     def _parse_tutorials(self):
         self.tutorials = self.booklet.tutorials
         for t in self.tutorials.values():
-            t.anthology_url = self.emnlp_anthology_prefix + f"2023.emnlp-tutorial.{t.id[1:]}"
-            t.tutorial_pdf = self.emnlp_anthology_prefix + f"2023.emnlp-tutorial.{t.id[1:]}.pdf"
+            t.anthology_url = self.eacl_anthology_prefix + f"2024.eacl-tutorial.{t.id[1:]}"
+            t.tutorial_pdf = self.eacl_anthology_prefix + f"2024.eacl-tutorial.{t.id[1:]}.pdf"
 
         for session in self.booklet.tutorial_sessions.values():
             if session.id in self.sessions:
@@ -380,15 +380,15 @@ class Emnlp2023Parser:
             self.papers[p.id] = p
 
     def _add_anthology_data(self):
-        logging.info("Parsing EMNLP Anthology main track data")
+        logging.info("Parsing EACL Anthology main track data")
         entries = []
-        with open(self.emnlp_main_long_proceedings_yaml_path) as f:
+        with open(self.eacl_main_long_proceedings_yaml_path) as f:
             entries.extend(yaml.safe_load(f))
 
-        with open(self.emnlp_main_short_proceedings_yaml_path) as f:
+        with open(self.eacl_main_short_proceedings_yaml_path) as f:
             entries.extend(yaml.safe_load(f))
 
-        with open(self.emnlp_main_findings_proceedings_yaml_path) as f:
+        with open(self.eacl_main_findings_proceedings_yaml_path) as f:
             entries.extend(yaml.safe_load(f))
 
         for e in entries:
@@ -409,8 +409,8 @@ class Emnlp2023Parser:
                     for a in e["authors"]
                 ],
             )
-        logging.info("Parsing EMNLP Anthology demo track data")
-        with open(self.emnlp_demo_proceedings_yaml_path) as f:
+        logging.info("Parsing EACL Anthology demo track data")
+        with open(self.eacl_demo_proceedings_yaml_path) as f:
             entries = yaml.safe_load(f)
         for idx, e in enumerate(entries, start=1):
             self.anthology_data[str(e["id"])] = AnthologyEntry(
@@ -428,8 +428,8 @@ class Emnlp2023Parser:
                 ],
             )
 
-        logging.info("Parsing EMNLP Anthology industry track data")
-        with open(self.emnlp_industry_proceedings_yaml_path) as f:
+        logging.info("Parsing EACL Anthology industry track data")
+        with open(self.eacl_industry_proceedings_yaml_path) as f:
             entries = yaml.safe_load(f)
         for idx, e in enumerate(entries, start=1):
             paper_id = 'I' + str(e['id'])
@@ -448,8 +448,8 @@ class Emnlp2023Parser:
                 ],
             )
 
-        logging.info("Parsing EMNLP Anthology SRW track data")
-        with open(self.emnlp_srw_proceedings_yaml_path) as f:
+        logging.info("Parsing EACL Anthology SRW track data")
+        with open(self.eacl_srw_proceedings_yaml_path) as f:
             entries = yaml.safe_load(f)
         for idx, e in enumerate(entries, start=1):
             paper_id = 'S' + str(e['id'])
@@ -1293,43 +1293,43 @@ class DateTimeEncoder(json.JSONEncoder):
 
 
 def main(
-    oral_tsv: str = "data/emnlp_2023/data/oral-papers.tsv",
-    poster_tsv: str = "data/emnlp_2023/data/poster-demo-papers.tsv",
-    virtual_tsv: str = "data/emnlp_2023/data/virtual-papers.tsv",
-    spotlight_tsv: str = "data/emnlp_2023/data/spotlight-papers.tsv",
-    extras_xlsx: str = "data/emnlp_2023/data/emnlp-2023-events-export-2023-07-09 (1).xlsx",
-    emnlp_main_long_proceedings_yaml: str = "data/emnlp_2023/data/main/long.yml",
-    emnlp_main_short_proceedings_yaml: str = "data/emnlp_2023/data/main/short.yml",
-    emnlp_main_findings_proceedings_yaml: str = "data/emnlp_2023/data/main/findings.yml",
-    emnlp_demo_proceedings_yaml: str = "data/emnlp_2023/data/demo/papers.yml",
-    emnlp_industry_proceedings_yaml: str = "data/emnlp_2023/data/industry/papers.yml",
-    emnlp_srw_proceedings_yaml: str = "data/emnlp_2023/data/SRW/papers.yml",
-    workshop_papers_yml: str = "data/emnlp_2023/data/workshop_papers.yaml",
-    workshops_yaml: str = "data/emnlp_2023/data/workshops.yaml",
-    booklet_json: str = "data/emnlp_2023/data/booklet_data.json",
-    socials_json: str = "data/emnlp_2023/data/socials_data.json",
-    keywords_csv: str = "data/emnlp_2023/data/keywords.csv",
-    emnlp_anthology_prefix: str = "https://aclanthology.org/",
-    out_dir: str = "data/emnlp_2023/data/",
+    oral_tsv: str = "data/eacl_2024/data/oral-papers.tsv",
+    poster_tsv: str = "data/eacl_2024/data/poster-demo-papers.tsv",
+    virtual_tsv: str = "data/eacl_2024/data/virtual-papers.tsv",
+    spotlight_tsv: str = "data/eacl_2024/data/spotlight-papers.tsv",
+    extras_xlsx: str = "data/eacl_2024/data/emnlp-2023-events-export-2023-07-09 (1).xlsx",
+    eacl_main_long_proceedings_yaml: str = "data/eacl_2024/data/main/long.yml",
+    eacl_main_short_proceedings_yaml: str = "data/eacl_2024/data/main/short.yml",
+    eacl_main_findings_proceedings_yaml: str = "data/eacl_2024/data/main/findings.yml",
+    eacl_demo_proceedings_yaml: str = "data/eacl_2024/data/demo/papers.yml",
+    eacl_industry_proceedings_yaml: str = "data/eacl_2024/data/industry/papers.yml",
+    eacl_srw_proceedings_yaml: str = "data/eacl_2024/data/SRW/papers.yml",
+    workshop_papers_yml: str = "data/eacl_2024/data/workshop_papers.yaml",
+    workshops_yaml: str = "data/eacl_2024/data/workshops.yaml",
+    booklet_json: str = "data/eacl_2024/data/booklet_data.json",
+    socials_json: str = "data/eacl_2024/data/socials_data.json",
+    keywords_csv: str = "data/eacl_2024/data/keywords.csv",
+    eacl_anthology_prefix: str = "https://aclanthology.org/",
+    out_dir: str = "data/eacl_2024/data/",
 ):
-    parser = Emnlp2023Parser(
+    parser = Eacl2023Parser(
         oral_tsv_path=Path(oral_tsv),
         poster_tsv_path=Path(poster_tsv),
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
         extras_xlsx_path=Path(extras_xlsx),
-        emnlp_main_long_proceedings_yaml_path=(emnlp_main_long_proceedings_yaml),
-        emnlp_main_short_proceedings_yaml_path=(emnlp_main_short_proceedings_yaml),
-        emnlp_main_findings_proceedings_yaml_path=(emnlp_main_findings_proceedings_yaml),
-        emnlp_demo_proceedings_yaml_path=Path(emnlp_demo_proceedings_yaml),
-        emnlp_industry_proceedings_yaml_path=Path(emnlp_industry_proceedings_yaml),
-        emnlp_srw_proceedings_yaml_path=Path(emnlp_srw_proceedings_yaml),
+        eacl_main_long_proceedings_yaml_path=(eacl_main_long_proceedings_yaml),
+        eacl_main_short_proceedings_yaml_path=(eacl_main_short_proceedings_yaml),
+        eacl_main_findings_proceedings_yaml_path=(eacl_main_findings_proceedings_yaml),
+        eacl_demo_proceedings_yaml_path=Path(eacl_demo_proceedings_yaml),
+        eacl_industry_proceedings_yaml_path=Path(eacl_industry_proceedings_yaml),
+        eacl_srw_proceedings_yaml_path=Path(eacl_srw_proceedings_yaml),
         workshop_papers_yaml_path=Path(workshop_papers_yml),
         workshops_yaml_path=Path(workshops_yaml),
         booklet_json_path=Path(booklet_json),
         socials_json_path=Path(socials_json),
         keywords_csv_path=Path(keywords_csv),
-        emnlp_anthology_prefix=emnlp_anthology_prefix,
+        eacl_anthology_prefix=eacl_anthology_prefix,
     )
     conf = parser.parse()
     out_dir = Path(out_dir)

@@ -10,7 +10,7 @@ from omegaconf import DictConfig
 from requests import sessions
 from rocketchat_API.rocketchat import RocketChat
 import yaml
-from emnlp_miniconf.data import Conference
+from eacl_miniconf.data import Conference
 from rich.progress import track
 
 
@@ -24,7 +24,7 @@ API_path = "/api/v1/"
 CUSTOM_EMOJI_DIR = Path("rocketchat-custom-emojis/")
 
 
-class EmnlpRcHelper:
+class EaclRcHelper:
     def __init__(
         self,
         *,
@@ -176,7 +176,7 @@ def hydra_main(cfg: DictConfig):
 
     if command == "create_paper_channels":
         with sessions.Session() as session:
-            helper = EmnlpRcHelper(
+            helper = EaclRcHelper(
                 user_id=cfg.user_id,
                 auth_token=cfg.auth_token,
                 server=cfg.server,
@@ -189,7 +189,7 @@ def hydra_main(cfg: DictConfig):
             helper.create_paper_channels()
     elif command == "create_tutorial_channels":
         with sessions.Session() as session:
-            helper = EmnlpRcHelper(
+            helper = EaclRcHelper(
                 user_id=cfg.user_id,
                 auth_token=cfg.auth_token,
                 server=cfg.server,
@@ -202,7 +202,7 @@ def hydra_main(cfg: DictConfig):
             helper.create_tutorial_channels()
     elif command == "create_workshop_channels":
         with sessions.Session() as session:
-            helper = EmnlpRcHelper(
+            helper = EaclRcHelper(
                 user_id=cfg.user_id,
                 auth_token=cfg.auth_token,
                 server=cfg.server,
@@ -215,7 +215,7 @@ def hydra_main(cfg: DictConfig):
             helper.create_workshop_channels()
     elif command == "add_emojis":
         with sessions.Session() as session:
-            helper = EmnlpRcHelper(
+            helper = EaclRcHelper(
                 user_id=cfg.user_id,
                 auth_token=cfg.auth_token,
                 server=cfg.server,

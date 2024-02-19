@@ -6,7 +6,7 @@ import datetime
 
 from pydantic import BaseModel
 import yaml
-from emnlp_miniconf.data import (
+from eacl_miniconf.data import (
     TUTORIALS,
     WORKSHOPS,
     AnthologyAuthor,

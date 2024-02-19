@@ -6,7 +6,7 @@ from typing import Any, DefaultDict, Dict, List, Optional
 
 import pytz
 
-from emnlp_miniconf.data import (
+from eacl_miniconf.data import (
     EVENT_TYPES,
     Conference,
     SiteData,
@@ -393,7 +393,7 @@ def reformat_plenary_data(plenaries):
         elif plenary_key[:10] == "academic-N":
             plenary.image_url = "invited/Christopher_Manning.jpg"
         else:
-            plenary.image_url = "emnlp2023/emnlp-2023-logo.png"
+            plenary.image_url = "eacl_2024/acl-logo.png"
         # Add the existing dates to a list of all possible dates
         if plenary_day not in session_data:
             session_data[plenary_day] = []
