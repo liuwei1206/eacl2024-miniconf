@@ -89,9 +89,9 @@ function make_cal(name) {
         //     tooltip: timezoneName
         // }],
         template: {
-          // monthDayname: function (dayname) {
-          //     return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
-          // },
+//           monthDayname: function (dayname) {
+//               return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+//           },
           time(schedule) {
             return `<strong>${moment(schedule.start.getTime())
               .tz(timezoneName)

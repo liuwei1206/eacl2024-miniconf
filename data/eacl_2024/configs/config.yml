@@ -9,9 +9,9 @@ site_url: https://virtual.2023.emnlp.org
 logo:
   image: static/images/eacl2024/acl-logo.png
   height: 45px
-site_title: EMNLP 2023
+site_title: EACL 2024
 page_title:
-  prefix: 'EMNLP2023'
+  prefix: 'EACL2024'
   separator: ': '
 background_image: static/images/eacl2024/header.png
 organization: Association for Computational Linguistics
@@ -33,6 +33,9 @@ connected_papers_conference_name: EMNLP2023
 calendar:
   start: '2023-12-06'
   end: '2023-12-10'
+#calendar:
+#  start: '2024-03-17'
+#  end: '2024-03-24'
 
 navigation_bar:
   order:

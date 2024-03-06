@@ -56,6 +56,10 @@ function make_cal(name) {
                 max_hours = 24;
             }
             // console.log(min_hours, max_hours);
+            var mywin = window.open('','','width=200,height=100');
+            myWindow.document.write("This is 'myWindow'");
+            myWindow.print();
+
             const Calendar = tui.Calendar;
             const calendar = new Calendar('#calendar', {
                 defaultView: 'week',
