@@ -34,9 +34,7 @@ def take_one(dictionary: Dict):
 app.jinja_env.filters["quote_plus"] = quote_plus
 app.jinja_env.filters["take_one"] = take_one
 
-# MAIN PAGES
-
-
+### MAIN PAGES ###
 def _data():
     data = {"config": site_data.config}
     return data
@@ -47,9 +45,7 @@ def index():
     return redirect("/index.html")
 
 
-# TOP LEVEL PAGES
-
-
+### TOP LEVEL PAGES ###
 @app.route("/index.html")
 def home():
     data = _data()
@@ -66,7 +62,6 @@ def papers():
     data["workshop_names"] = [wsh.title for wsh in site_data.workshops]
     return render_template("papers.html", **data)
 
-
 @app.route("/papers_vis.html")
 def papers_vis():
     data = _data()
@@ -74,7 +69,6 @@ def papers_vis():
     # See the `papers_json()` method and `static/js/papers.js`.
     data["tracks"] = site_data.main_program_tracks + ["System Demonstrations"]
     return render_template("papers_vis.html", **data)
-
 
 @app.route("/papers_keyword_vis.html")
 def papers_keyword_vis():

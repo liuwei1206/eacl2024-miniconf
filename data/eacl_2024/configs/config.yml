@@ -44,5 +44,6 @@ navigation_bar:
     Home: index.html
     Schedule: schedule.html
     Papers: papers.html
-    Organizers: https://2023.emnlp.org/organization/,
+    Organizers: https://2024.eacl.org/committees/organization/
+#    Organizers: https://2023.emnlp.org/organization/,
  
