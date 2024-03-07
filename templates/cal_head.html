@@ -4,6 +4,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         // var initial_view = 'timeGridWeek';
         var initial_view = 'timeGridDay';
+        // var initial_view = 'listDay'
         window.fc_current_view = initial_view;
         var initialTimeZone = moment.tz.guess();
         var timeZoneSelectorEl = document.getElementById('time-zone-selector');
@@ -22,6 +23,7 @@
 
             var calendarEl = document.getElementById('calendar');
             var calendar_n = new FullCalendar.Calendar(calendarEl, {
+                eventMaxStack: 4,
                 initialView: initial_view,
                 initialDate: '{{ config.calendar.start }}',
                 timeZone: initialTimeZone,

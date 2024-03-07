@@ -110,6 +110,8 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
         )
         overall_calendar.append(event)
         existing_events = set()
+        print(session.name, session.start_time, session.end_time)
+        print(session.events)
         for event in session.events.values():
             if (event.session, event.track, event.start_time) not in existing_events:
                 if event.type == 'Socials':

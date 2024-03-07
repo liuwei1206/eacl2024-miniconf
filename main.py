@@ -84,6 +84,7 @@ def schedule():
     data = _data()
     data["calendar"] = [e.dict() for e in site_data.calendar]
     data["event_types"] = site_data.session_types
+    print("calendae size:", len(data["calendar"]), len(data["event_types"]))
     return render_template("schedule.html", **data)
 
 
@@ -301,10 +302,11 @@ def hydra_main(cfg: DictConfig):
         conference,
         data_dir,
     )
+    # print("here +", len(site_data.calendar))
     site_data.local_timezone = cfg.time_zone
     by_uid = ByUid()
     extra_files = load_site_data(conference, site_data, by_uid)
-
+    # print("here ++", len(site_data.calendar))
     if cfg.build:
         freezer.freeze()
     else:
