@@ -23,7 +23,7 @@
 
             var calendarEl = document.getElementById('calendar');
             var calendar_n = new FullCalendar.Calendar(calendarEl, {
-                eventMaxStack: 4,
+                eventMaxStack: 3,
                 initialView: initial_view,
                 initialDate: '{{ config.calendar.start }}',
                 timeZone: initialTimeZone,

@@ -3,6 +3,7 @@ import datetime
 import re
 from datetime import timedelta
 from typing import Any, DefaultDict, Dict, List, Optional
+from collections import defaultdict
 
 import pytz
 
@@ -31,7 +32,7 @@ def load_site_data(
     # generate_tutorial_events(site_data)
     # generate_workshop_events(site_data)
     site_data.overall_calendar: List[FrontendCalendarEvent] = []
-    site_data.overall_calendar.extend(generate_paper_events(site_data))
+    site_data.overall_calendar.extend(generate_paper_events_v1(site_data))
     # site_data.overall_calendar.extend(generate_social_events(site_data))
     # generate_social_events(site_data)
 
@@ -74,6 +75,344 @@ def extract_list_field(v, key):
         return value.split("|")
 
 
+def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
+    """
+    Modified by Wei Liu (Heidelberg Institute for Theoretical Studies)
+
+    configure the title of each item in fullCalendar
+    """
+    # Add paper sessions to calendar
+    overall_calendar = []
+    existing_events = defaultdict(int)
+    for uid, session in site_data.sessions.items():
+        start = session.start_time
+        end = session.end_time
+        tab_id = (
+            session.start_time.astimezone(pytz.utc)
+                .strftime("%B %d")
+                .replace(" ", "")
+                .lower()
+        )
+
+        week_view_name = session.name
+        if session.type == "Plenary Sessions":
+            url = f"plenary_sessions.html#tab-{tab_id}"
+        elif session.type == "Workshops":
+            url = f"workshops.html#tab-{tab_id}"
+            week_view_name = list(session.workshop_events.values())[0].session
+        elif session.type == "Tutorials":
+            url = f"tutorials.html#tab-{tab_id}"
+        elif session.type == "Socials":
+            url = f"socials.html#tab-{tab_id}"
+        else:
+            url = f"sessions.html#link-{tab_id}-{session.id}"
+
+        #### for weekly view ####
+        event = FrontendCalendarEvent(
+            title=week_view_name,
+            start=session.start_time,
+            end=session.end_time,
+            location="",
+            url=url,
+            category="time",
+            type=session.type,
+            view="week",
+        )
+        overall_calendar.append(event)
+
+        #### for dayly view #####
+        ## social event
+        for event in session.events.values():
+            day_view_name = event.track
+            if event.type.lower() == "poster":
+                url = f"/sessions.html#link-{tab_id}-{event.id}"
+                day_view_name = "Poster: {}".format(event.track)
+            elif event.type.lower() == "oral":
+                url = f"/sessions.html#link-{tab_id}-{event.id}"
+                day_view_name = "Oral: {}".format(event.track)
+            elif event.type.lower() == "socials":
+                url = "/socials.html"
+                if "Birds of a Feather" in event.track:
+                    day_view_name = "BoF {}: {}".format(event.id.split("-")[1], session.name)
+                elif "Affinity Group Meeting" in event.track:
+                    day_view_name = "Affinity Group Meeting {}: {}".format(event.id.split("-")[1], session.name)
+                elif "Dinner" in event.track:
+                    day_view_name = "Dinner"
+                elif "Welcome":
+                    day_view_name = "Welcome reception"
+            elif event.type.lower() == "breaks":
+                url = f"/sessions.html#link-{tab_id}-{event.id}"
+            else:
+                pass
+
+            frontend_event = FrontendCalendarEvent(
+                title=day_view_name,
+                start=start,
+                end=end,
+                location="",
+                # url=f"papers.html?session={session.id}&program=all",
+                url=url,
+                category="time",
+                type=session.type,
+                view="day",
+            )
+            event_key = ""
+            event_key = "{}+{}+{}".format(day_view_name, event.track, str(event.start_time).split()[0])
+            if existing_events[event_key] == 0:
+                if "Poster: Industry" in day_view_name:
+                    print("---")
+                    print(event_key)
+                    print(existing_events[event_key])
+                    # print(day_view_name, event.track, str(event.start_time).split()[0])
+                overall_calendar.append(frontend_event)
+                existing_events[event_key] += 1
+                assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+                if "Poster: Industry" in day_view_name:
+                    print("+++")
+                    print(event_key)
+                    print(existing_events[event_key])
+
+        ## tutorial event
+        for event in session.tutorial_events.values():
+            frontend_event = FrontendCalendarEvent(
+                # title=f"<b>{event.track}</b>",
+                title=session.name,
+                start=start,
+                end=end,
+                location="",
+                # TODO: UID probably doesn't work here
+                url=f"tutorial_{event.id}.html",
+                category="time",
+                type=session.type,
+                view="day",
+            )
+            event_key = "{}+{}+{}".format(session.name, event.track, event.start_time)
+            if existing_events[event_key] == 0:
+                existing_events[event_key] += 1
+                overall_calendar.append(frontend_event)
+                assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+        ## for plenary event
+        for event in session.plenary_events.values():
+            if (session.name, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    # title=f"<b>{event.track}</b>",
+                    title=session.name,
+                    start=start,
+                    end=end,
+                    location=event.room,
+                    url=f"plenary_sessions.html",
+                    category="time",
+                    type=session.type,
+                    view="day",
+                )
+                event_key = "{}+{}+{}".format(session.name, event.track, event.start_time)
+                if existing_events[event_key] == 0:
+                    existing_events[event_key] += 1
+                    overall_calendar.append(frontend_event)
+                    assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+        ## for workshop event
+        for event in session.workshop_events.values():
+            frontend_event = FrontendCalendarEvent(
+                # title=f"<b>{event.track}</b>",
+                title=session.name,
+                start=start,
+                end=end,
+                location=event.room,
+                # TODO: UID probably doesn't work here
+                url=f"workshop_{event.short_name}.html",
+                category="time",
+                type=session.type,
+                view="day",
+            )
+            event_key = "{}+{}+{}".format(session.name, event.track, event.start_time)
+            if existing_events[event_key] == 0:
+                existing_events[event_key] += 1
+                overall_calendar.append(frontend_event)
+                assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+    return overall_calendar
+
+
+def generate_paper_events_v2(site_data: SiteData) -> List[Dict[str, Any]]:
+    """
+    Modified by Wei Liu (Heidelberg Institute for Theoretical Studies)
+
+    configure the title of each item in fullCalendar
+    """
+    # Add paper sessions to calendar
+    overall_calendar = []
+    for uid, session in site_data.sessions.items():
+        start = session.start_time
+        end = session.end_time
+        tab_id = (
+            session.start_time.astimezone(pytz.utc)
+                .strftime("%B %d")
+                .replace(" ", "")
+                .lower()
+        )
+
+        week_view_name = session.name
+        if session.type == "Plenary Sessions":
+            url = f"plenary_sessions.html#tab-{tab_id}"
+            # print(session.type, session.name, "++++++")
+        elif session.type == "Workshops":
+            url = f"workshops.html#tab-{tab_id}"
+            # week_view_name = session.workshop_events.values().session
+            week_view_name = list(session.workshop_events.values())[0].session
+        elif session.type == "Tutorials":
+            url = f"tutorials.html#tab-{tab_id}"
+            # print(session.type, session.name, "++++++")
+        elif session.type == "Socials":
+            url = f"socials.html#tab-{tab_id}"
+        else:
+            url = f"sessions.html#link-{tab_id}-{session.id}"
+
+        #### for weekly view ####
+        event = FrontendCalendarEvent(
+            title=week_view_name,
+            start=session.start_time,
+            end=session.end_time,
+            location="",
+            url=url,
+            category="time",
+            type=session.type,
+            view="week",
+        )
+        overall_calendar.append(event)
+        existing_events = set()
+        # print(session.type, session.name, session.start_time, session.end_time, "----------")
+        # print(session.events)
+
+        #### for dayly view #####
+        ## social event
+        for event in session.events.values():
+            day_view_name = event.track
+            if event.type.lower() == "poster":
+                url = f"/sessions.html#link-{tab_id}-{event.id}"
+                # print(session.type, session.name, "++++")
+                # print(event.session, event.track, event.start_time, "----")
+                day_view_name = "Poster: {}".format(event.track)
+                # print(day_view_name, "+++++++++")
+            elif event.type.lower() == "oral":
+                url = f"/sessions.html#link-{tab_id}-{event.id}"
+                day_view_name = "Oral: {}".format(event.track)
+            elif event.type.lower() == "socials":
+                url = "/socials.html"
+                # print(session.type, session.name, "++++")
+                # print(event)
+                if "Birds of a Feather" in event.track:
+                    day_view_name = "BoF {}: {}".format(event.id.split("-")[1], session.name)
+                elif "Affinity Group Meeting" in event.track:
+                    day_view_name = "Affinity Group Meeting {}: {}".format(event.id.split("-")[1], session.name)
+                elif "Dinner" in event.track:
+                    day_view_name = "Dinner"
+                elif "Welcome":
+                    day_view_name = "Welcome reception"
+            elif event.type.lower() == "breaks":
+                url = f"/sessions.html#link-{tab_id}-{event.id}"
+            else:
+                pass
+
+            frontend_event = FrontendCalendarEvent(
+                title=day_view_name,
+                start=start,
+                end=end,
+                location="",
+                # url=f"papers.html?session={session.id}&program=all",
+                url=url,
+                category="time",
+                type=session.type,
+                view="day",
+            )
+            # We don't want repeats of types, just collect all matching session/track
+            # into one page
+            if (day_view_name, event.track, str(event.start_time).split()[0]) not in existing_events:
+                if "Poster: Industry" in day_view_name:
+                    print(day_view_name, event.track, str(event.start_time).split()[0])
+                existing_events.add((day_view_name, event.track, str(event.start_time).split()[0]))
+                overall_calendar.append(frontend_event)
+
+            assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+        ## tutorial event
+        for event in session.tutorial_events.values():
+            # print(event.session, event.track, event.start_time, "------")
+            # if (event.session, event.track, event.start_time) not in existing_events:
+            if (session.name, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    # title=f"<b>{event.track}</b>",
+                    title=session.name,
+                    start=start,
+                    end=end,
+                    location="",
+                    # TODO: UID probably doesn't work here
+                    url=f"tutorial_{event.id}.html",
+                    category="time",
+                    type=session.type,
+                    view="day",
+                )
+                # We don't want repeats of types, just collect all matching session/track
+                # into one page
+                # existing_events.add((event.session, event.track, event.start_time))
+                existing_events.add((session.name, event.track, event.start_time))
+                overall_calendar.append(frontend_event)
+
+                assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+        ## for plenary event
+        for event in session.plenary_events.values():
+            # if (event.session, event.track, event.start_time) not in existing_events:
+            if (session.name, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    # title=f"<b>{event.track}</b>",
+                    title=session.name,
+                    start=start,
+                    end=end,
+                    location=event.room,
+                    url=f"plenary_sessions.html",
+                    category="time",
+                    type=session.type,
+                    view="day",
+                )
+                # We don't want repeats of types, just collect all matching session/track
+                # into one page
+                # existing_events.add((event.session, event.track, event.start_time))
+                existing_events.add((session.name, event.track, event.start_time))
+                overall_calendar.append(frontend_event)
+
+                assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+        ## for workshop event
+        for event in session.workshop_events.values():
+            # print(session.name, event.session, event.track, event.start_time, "+++++++++++")
+            # if (event.session, event.track, event.start_time) not in existing_events:
+            if (session.name, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    # title=f"<b>{event.track}</b>",
+                    title=session.name,
+                    start=start,
+                    end=end,
+                    location=event.room,
+                    # TODO: UID probably doesn't work here
+                    url=f"workshop_{event.short_name}.html",
+                    category="time",
+                    type=session.type,
+                    view="day",
+                )
+                # We don't want repeats of types, just collect all matching session/track
+                # into one page
+                # existing_events.add((event.session, event.track, event.start_time))
+                existing_events.add((session.name, event.track, event.start_time))
+                overall_calendar.append(frontend_event)
+
+                assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
+
+    return overall_calendar
+
+
 def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     """We add sessions from papers and compute the overall paper blocks for the weekly view."""
     # Add paper sessions to calendar
@@ -110,9 +449,10 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
         )
         overall_calendar.append(event)
         existing_events = set()
-        print(session.name, session.start_time, session.end_time)
-        print(session.events)
+        print(session.type, session.name, session.start_time, session.end_time, "----------")
+        # print(session.events)
         for event in session.events.values():
+            print(event.session, event.track, event.start_time, "+++++++++++")
             if (event.session, event.track, event.start_time) not in existing_events:
                 if event.type == 'Socials':
                     url = "/socials.html"
