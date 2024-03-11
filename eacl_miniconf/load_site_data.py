@@ -222,6 +222,7 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 end=end,
                 location=event.room,
                 # TODO: UID probably doesn't work here
+                # url="<a href='"+f"workshop_{event.short_name}.html"+"'></a>",
                 url=f"workshop_{event.short_name}.html",
                 category="time",
                 type=session.type,
