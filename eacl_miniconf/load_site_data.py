@@ -159,19 +159,19 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
             event_key = ""
             event_key = "{}+{}+{}".format(day_view_name, event.track, str(event.start_time).split()[0])
             if existing_events[event_key] == 0:
-                if "Poster: Industry" in day_view_name:
-                    print("---")
-                    print(event_key)
-                    print(existing_events[event_key])
+                # if "Poster: Industry" in day_view_name:
+                    # print("---")
+                    # print(event_key)
+                    # print(existing_events[event_key])
                     # print(day_view_name, event.track, str(event.start_time).split()[0])
                 overall_calendar.append(frontend_event)
                 existing_events[event_key] += 1
                 assert start <= end, f"Session start after session end: {session.id} {event.id}\n{start} {end}\n{event.start_time} {event.end_time}"
 
-                if "Poster: Industry" in day_view_name:
-                    print("+++")
-                    print(event_key)
-                    print(existing_events[event_key])
+                # if "Poster: Industry" in day_view_name:
+                #     print("+++")
+                #     print(event_key)
+                #     print(existing_events[event_key])
 
         ## tutorial event
         for event in session.tutorial_events.values():

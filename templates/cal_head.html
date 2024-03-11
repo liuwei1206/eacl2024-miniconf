@@ -4,7 +4,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         // var initial_view = 'timeGridWeek';
         var initial_view = 'timeGridDay';
-        // var initial_view = 'listDay'
+        // var initial_view = 'listWeek'
         window.fc_current_view = initial_view;
         var initialTimeZone = moment.tz.guess();
         var timeZoneSelectorEl = document.getElementById('time-zone-selector');
@@ -23,7 +23,7 @@
 
             var calendarEl = document.getElementById('calendar');
             var calendar_n = new FullCalendar.Calendar(calendarEl, {
-                eventMaxStack: 3,
+                // eventMaxStack: 3,
                 initialView: initial_view,
                 initialDate: '{{ config.calendar.start }}',
                 timeZone: initialTimeZone,
@@ -50,6 +50,7 @@
                     left: 'prev,next today',
                     center: 'title',
                     right: 'timeGridDay,timeGridWeek'
+                    // right: 'listDay,listWeek'
                 },
                 slotEventOverlap: false,
                 slotDuration: "00:30:00",
@@ -79,6 +80,13 @@
                             !eventTypes.includes(obj["type"])) {
                             obj["display"] = "none";
                         }
+
+<!--                        if (obj["view"] === "day" && view !== "listDay" ||-->
+<!--                            obj["view"] === "week" && view !== "listWeek" ||-->
+<!--                            !eventTypes.includes(obj["type"])) {-->
+<!--                            obj["display"] = "none";-->
+<!--                        }-->
+
                     }
                     successCallback(zoned_events);
                 },
@@ -87,6 +95,7 @@
                     // Prevent reloading the current page, as we clicked
                     // on a hyperlink on the current page
                     eventClickInfo.jsEvent.preventDefault();
+                    console.log(e)
 
                     if (e.url) {
                         window.open(e.url, "_blank");
