@@ -1,5 +1,13 @@
+"""
+refer to:
+    https://developer.rocket.chat/chat-engine/chat-engine-in-iframe
+    https://github.com/jadolg/rocketchat_API
+    https://forums.rocket.chat/t/error-you-must-be-logged-in-to-do-this-with-status-code-401unauthorized/9804
+"""
+
 from pathlib import Path
 import os
+from os.path import dirname
 from typing import List
 import pickle
 import json
@@ -12,7 +20,6 @@ from rocketchat_API.rocketchat import RocketChat
 import yaml
 from eacl_miniconf.data import Conference
 from rich.progress import track
-
 
 def paper_id_to_channel_name(paper_id: str):
     channel_name = f"paper-{paper_id}"
@@ -37,6 +44,10 @@ class EaclRcHelper:
         session: sessions.Session,
         dry_run: bool = False,
     ):
+        proj_path = dirname(dirname(dirname(__file__)))
+        program_json_path = os.path.join(proj_path, program_json_path)
+        booklet_json_path = os.path.join(proj_path, booklet_json_path)
+        workshops_yaml_path = os.path.join(proj_path, workshops_yaml_path)
         self.conference: Conference = Conference.parse_file(program_json_path)
         with open(booklet_json_path) as f:
             self.booklet = json.load(f)
@@ -226,7 +237,31 @@ def hydra_main(cfg: DictConfig):
                 dry_run=cfg.dry_run,
             )
             helper.add_custom_emojis()
+    elif command == "get_channel_names":
+        with sessions.Session() as session:
+            helper = EaclRcHelper(
+                user_id=cfg.user_id,
+                auth_token=cfg.auth_token,
+                server=cfg.server,
+                session=session,
+                program_json_path=Path(cfg.program_json_path),
+                booklet_json_path=Path(cfg.booklet_json_path),
+                workshops_yaml_path=Path(cfg.workshops_yaml_path),
+                dry_run=cfg.dry_run,
+            )
+            channel_names = helper.get_channel_names()
+            print(channel_names)
 
 
 if __name__ == "__main__":
     hydra_main()
+
+    ## for test connection
+    # with sessions.Session() as session:
+    #     rocket = RocketChat(
+    #         user_id="5MX6yMtn4f9sZQ86C",
+    #         auth_token="tqavEbwkcoafkWWeoYf17H_S1ys99OD_Ei66mgll7kO",
+    #         server_url="https://acl.rocket.chat",
+    #         session=session,
+    #     )
+    # print(rocket.me().json())
