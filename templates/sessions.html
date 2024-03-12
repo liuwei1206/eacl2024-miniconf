@@ -90,7 +90,7 @@
                                         {% endif %}
                                     <li>
                                         <a href="paper_{{paper.id}}.html" target="_blank">
-                                            {{ paper.title }}
+                                            {{ paper.title + ". " + paper.authors|join(', ') + "."}}
                                         </a>
                                     </li>
                                     {% endfor %}

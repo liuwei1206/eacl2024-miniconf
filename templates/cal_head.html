@@ -58,6 +58,8 @@
                 slotEventOverlap: false,
                 slotDuration: "00:30:00",
                 height: "auto",
+                eventOrderStrict: true,
+                eventOrder: "start,title",
                 events: function (info, successCallback, failureCallback) {
                     let tz = info.timeZone;
                     //get selected event types
@@ -74,6 +76,7 @@
                         var obj = zoned_events[i];
                         obj["start"] = moment(obj["start"]).tz(tz).format();
                         obj["end"] = moment(obj["end"]).tz(tz).format();
+                        obj["title"] = obj["title"] + ", Room: " + obj["location"];
 
 <!--                        if (obj["view"] === "day" && view !== "timeGridDay" ||-->
 <!--                            obj["view"] === "week" && view !== "timeGridWeek" ||-->
@@ -103,7 +106,8 @@
                 // Here is the information show in each item when you put your mouse on the item
                 eventDidMount: function (info) {
                     var title = info.event.title;
-                    // console.log(info.event.title)
+                    var loc = info.event.extendedProps.location;
+                    console.log(info.event.extendedProps.location);
                     $(info.el).popover({
                         title: title,
                         html: true,
@@ -132,15 +136,6 @@
             window.fc_current_view = calendar.view.type;
             calendar.render();
         });
-
-        // document.getElementsByClassName("fc-list-event-graphic").style.display = "None";
-        // event_dots.style.display = "None"
-        // for (let el of document.querySelectorAll('fc-list-event-graphic')) el.style.visibility = 'hidden';
-        event_dots = document.getElementsByClassName("fc-list-event-graphic");
-        for (let i=0; i<event_dots.length; i++){
-            event_dots[i].style.display = 'None';
-            console.log(i);
-        }
 
         // M: I moved these functions from the above loop because otherwise they
         // don't work well in Firefox. I believe the issue is one of script execution:
