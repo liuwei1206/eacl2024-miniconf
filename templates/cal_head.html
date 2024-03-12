@@ -42,7 +42,7 @@
                     hour: '2-digit',
                     minute: '2-digit',
                     meridiem: false,
-                    timeZoneName: 'short',
+                    // timeZoneName: 'short',
                     hour12: false
                 },
                 visibleRange: {
@@ -111,7 +111,9 @@
                         placement: 'top',
                         trigger: 'hover',
                         container: 'body'
-                    })
+                    });
+                    // for (let el of document.getElementsByClassName('fc-list-event-graphic')) el.style.visibility = 'hidden';
+                    for (let el of document.getElementsByClassName('fc-list-event-graphic')) el.remove();
                 },
                 // Render HTML from title as HTML
                 eventContent: function (arg) {
@@ -130,6 +132,15 @@
             window.fc_current_view = calendar.view.type;
             calendar.render();
         });
+
+        // document.getElementsByClassName("fc-list-event-graphic").style.display = "None";
+        // event_dots.style.display = "None"
+        // for (let el of document.querySelectorAll('fc-list-event-graphic')) el.style.visibility = 'hidden';
+        event_dots = document.getElementsByClassName("fc-list-event-graphic");
+        for (let i=0; i<event_dots.length; i++){
+            event_dots[i].style.display = 'None';
+            console.log(i);
+        }
 
         // M: I moved these functions from the above loop because otherwise they
         // don't work well in Firefox. I believe the issue is one of script execution:
