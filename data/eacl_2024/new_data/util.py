@@ -65,6 +65,7 @@ def poster_session_time(str):
     items = [opt_item(item) for item in items if item.strip() != ""]
     return "; ".join(items)
 
+
 def prepare_tutorial_data(data_file):
     data = [
         [
@@ -101,7 +102,7 @@ def prepare_tutorial_data(data_file):
     #     data,
     #     columns=column_names
     # )
-    # df.to_excel("input.xlsx", index=False, sheet_name="Tutorials Schedule")
+    # df.to_excel("inputs.xlsx", index=False, sheet_name="Tutorials Schedule")
 
     return data, column_names, sheet_name
 
@@ -142,12 +143,12 @@ def prepare_workshop_data(data_file):
                     'Shortname', 'Id', 'Title', 'organizers',
                     'Poster Session', 'Sponsors', 'Desc', 'url']
 
-    sheet_name = "Workshops Schedule"
+    sheet_name = "Workshop Schedule"
     df1 = pd.DataFrame(
         data,
         columns=column_names
     )
-    df1.to_excel("input.xlsx", index=False, sheet_name="Workshops Schedule")
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="Workshops Schedule")
 
     return data, column_names, sheet_name
 
@@ -179,7 +180,7 @@ def prepare_plenary_data(data_file):
         data,
         columns=column_names
     )
-    df1.to_excel("input.xlsx", index=False, sheet_name="Plenary Schedule")
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="Plenary Schedule")
 
     return data, column_names, sheet_name
 
@@ -208,7 +209,116 @@ def prepare_break_data(data_file):
         data,
         columns=column_names
     )
-    df1.to_excel("input.xlsx", index=False, sheet_name="Breaks Schedule")
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="Breaks Schedule")
+
+    return data, column_names, sheet_name
+
+def prepare_affinity_data(data_file):
+    data = [
+        [s2d("2024-03-19"), "13:00:00", "13:45:00", "13:00 - 13:45", "",
+         "Affinity Group Meeting 1", "AGM-1", "Masakhane/Black in AI/North Africans in NLP", "", ""
+         ],
+        [s2d("2024-03-19"), "14:00:00", "15:30:00", "14:00 - 15:30", "",
+         "Affinity Group Meeting 2", "AGM-2", "Queer in AI", "Anne Lauscher", ""
+         ],
+        [s2d("2024-03-20"), "11:00:00", "12:30:00", "11:00 - 12:30", "",
+         "Affinity Group Meeting 3", "AGM-3", "Latin X in AI", "", ""
+         ],
+    ]
+    column_names = ['Date', 'Start Time', 'End Time', 'Time', 'Room', 'Track', 'Session ID', 'Session Title', "Session Chairs", "Url"]
+    sheet_name = "Affinity Groups & BoF"
+    df1 = pd.DataFrame(
+        data,
+        columns=column_names
+    )
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="Affinity Groups & BoF")
+
+    return data, column_names, sheet_name
+
+def prepare_poster_data(data_file):
+    def get_time(time_str):
+        items = time_str.split("-")
+        start_time = items[0].strip()
+        return s2t("{}:00".format(start_time))
+
+    # Oral Program Table
+    df = pd.read_excel(data_file, sheet_name='PosterDemoSRWFindings Program T')
+    data = []
+    for index, row in df.iterrows():
+        # date, Time, Paper ID, Title, Authors, Session name, Presentation Mode
+        date = row['Date']
+        time = row['Time CET (Local Time)']
+        paper_id = row['Paper ID']
+        title = row['Paper Title']
+        authors = row['Authors']
+        session_name = row['Conf. Session']
+        presentation_mode = row['Poster Session']
+        # track = row['Track']
+
+        data.append([
+            date.date(), get_time(time), paper_id, title, authors, session_name, presentation_mode
+        ])
+    column_names = ['Date', 'Time', 'Paper ID', 'Title', 'Authors', 'Session name', 'Presentation Mode']
+    sheet_name = "PosterDemoIndustryFindings"
+
+    df1 = pd.DataFrame(
+        data,
+        columns=column_names
+    )
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="PosterDemoIndustryFindings")
+
+    return data, column_names, sheet_name
+
+def prepare_oral_data(data_file):
+    # Oral Program Table
+    df = pd.read_excel(data_file, sheet_name='Oral Program Table')
+    data = []
+    for index, row in df.iterrows():
+        # date, Time, Paper ID, Title, Authors, Session name, Presentation Mode
+        date = row['Date']
+        time = row['Time CET (Local Time)']
+        room = row['Room']
+        paper_id = row['Paper ID']
+        title = row['Paper Title']
+        authors = row['Author']
+        session_name = row['Session Name ']
+        presentation_mode = row['Presentation Preference']
+
+        data.append([
+            date.date(), time, room, paper_id, title, authors, session_name, presentation_mode
+        ])
+    column_names = ['Date', 'Time', 'Room', 'Paper ID', 'Paper Title', 'Authors', 'Session name', 'Presentation Mode']
+    sheet_name = "Orals Schedule"
+
+    df1 = pd.DataFrame(
+        data,
+        columns=column_names
+    )
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="Orals Schedule")
+
+    return data, column_names, sheet_name
+
+def prepare_paper_data(data_file):
+    df = pd.read_excel(data_file, sheet_name='Accepted Papers')
+    data = []
+    for index, row in df.iterrows():
+        if index <= 1:
+            continue
+        title = row['title']
+        decision = row['decision']
+        authors = row['author_names']
+
+        data.append(
+            [title, decision, authors]
+        )
+    column_names = ['Title', 'Decision', 'Authors']
+    sheet_name = "EACL Accepted Papers"
+
+    df1 = pd.DataFrame(
+        data,
+        columns=column_names
+    )
+    # df1.to_excel("inputs.xlsx", index=False, sheet_name="EACL Accepted Papers")
 
     return data, column_names, sheet_name
 
@@ -216,7 +326,65 @@ def write_to_excel(data_file):
     # prepare_tutorial_data(data_file=data_file)
     # prepare_workshop_data(data_file)
     # prepare_plenary_data(data_file)
-    prepare_break_data(data_file)
+    # prepare_break_data(data_file)
+    # prepare_affinity_data(data_file)
+    # prepare_poster_data(data_file)
+    # prepare_oral_data(data_file)
+    # prepare_paper_data(data_file)
+
+    tutoral_data, tutorial_names, tutorial_sheet = prepare_tutorial_data(data_file)
+    workshop_data, workshop_names, workshop_sheet = prepare_workshop_data(data_file)
+    plenary_data, plenary_names, plenary_sheet = prepare_plenary_data(data_file)
+    oral_data, oral_names, oral_sheet = prepare_oral_data(data_file)
+    poster_data, poster_names, poster_sheet = prepare_poster_data(data_file)
+    accept_data, accept_names, accept_sheet = prepare_paper_data(data_file)
+    break_data, break_names, break_sheet = prepare_break_data(data_file)
+    affi_data, affi_names, affi_sheet = prepare_affinity_data(data_file)
+
+    df1 = pd.DataFrame(
+        tutoral_data,
+        columns=tutorial_names
+    )
+    df2 = pd.DataFrame(
+        workshop_data,
+        columns=workshop_names
+    )
+    df3 = pd.DataFrame(
+        plenary_data,
+        columns=plenary_names
+    )
+    df4 = pd.DataFrame(
+        oral_data,
+        columns=oral_names
+    )
+    df5 = pd.DataFrame(
+        poster_data,
+        columns=poster_names
+    )
+    df6 = pd.DataFrame(
+        accept_data,
+        columns=accept_names
+    )
+    df7 = pd.DataFrame(
+        break_data,
+        columns=break_names
+    )
+    df8 = pd.DataFrame(
+        affi_data,
+        columns=affi_names
+    )
+    writer = pd.ExcelWriter("inputs.xlsx") # , engine="xlsxwriter")
+    df1.to_excel(writer, sheet_name=tutorial_sheet, index=False)
+    df2.to_excel(writer, sheet_name=workshop_sheet, index=False)
+    df3.to_excel(writer, sheet_name=plenary_sheet, index=False)
+    df4.to_excel(writer, sheet_name=oral_sheet, index=False)
+    df5.to_excel(writer, sheet_name=poster_sheet, index=False)
+    df6.to_excel(writer, sheet_name=accept_sheet, index=False)
+    df7.to_excel(writer, sheet_name=break_sheet, index=False)
+    df8.to_excel(writer, sheet_name=affi_sheet, index=False)
+    writer.close()
+
+
 if __name__ == "__main__":
     data_file = "EACL24-Events.xlsx"
     write_to_excel(data_file)

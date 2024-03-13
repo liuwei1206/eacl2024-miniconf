@@ -31,7 +31,7 @@ def write_workshop_old():
         "workshops": data
     }
 
-    with open('json_data/workshop.json', 'w') as file:
+    with open('../json_data/workshop.json', 'w') as file:
         json.dump(final_data, file, indent=4)
 
 def write_workshop():
@@ -77,5 +77,5 @@ def write_workshop():
         "workshops": data
     }
 
-    with open('json_data/workshop.json', 'w') as file:
+    with open('../json_data/workshop.json', 'w') as file:
         json.dump(final_data, file, indent=4)

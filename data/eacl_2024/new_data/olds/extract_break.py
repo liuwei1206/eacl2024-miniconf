@@ -60,8 +60,8 @@ for index, row in df.iterrows():
     }
     display_data["Break {}".format(count)] = display_break_data
 
-with open('json_data/break.json', 'w') as file:
+with open('../json_data/break.json', 'w') as file:
     json.dump(data, file, indent=4)
 
-with open('json_data/display_break.json', 'w') as file:
+with open('../json_data/display_break.json', 'w') as file:
     json.dump(display_data, file, indent=4)

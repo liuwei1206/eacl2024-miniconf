@@ -254,14 +254,14 @@ def hydra_main(cfg: DictConfig):
 
 
 if __name__ == "__main__":
-    hydra_main()
+    # hydra_main()
 
     ## for test connection
-    # with sessions.Session() as session:
-    #     rocket = RocketChat(
-    #         user_id="5MX6yMtn4f9sZQ86C",
-    #         auth_token="tqavEbwkcoafkWWeoYf17H_S1ys99OD_Ei66mgll7kO",
-    #         server_url="https://acl.rocket.chat",
-    #         session=session,
-    #     )
-    # print(rocket.me().json())
+    with sessions.Session() as session:
+        rocket = RocketChat(
+            user_id="5MX6yMtn4f9sZQ86C",
+            auth_token="tqavEbwkcoafkWWeoYf17H_S1ys99OD_Ei66mgll7kO",
+            server_url="https://acl.rocket.chat",
+            session=session,
+        )
+    print(rocket.me().json())
