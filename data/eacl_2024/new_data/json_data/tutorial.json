@@ -1,0 +1,54 @@
+{
+    "tutorials": [
+        {
+            "id": "T1",
+            "title": "T1: Transformer-specific Interpretability",
+            "desc": "",
+            "location": "Radisson (Radisson Blu Hotel)",
+            "start_time": "2024-03-21 13:00:00",
+            "end_time": "2024-03-21 16:30:00",
+            "hosts": "",
+            "rocketchat": ""
+        },
+        {
+            "id": "T2",
+            "title": "T2: LLMs for Low Resource Languages in Multilingual, Multimodal and Dialectal Settings",
+            "desc": "",
+            "location": "Fortress 2 (Corinthia Hotel)",
+            "start_time": "2024-03-21 13:00:00",
+            "end_time": "2024-03-21 16:30:00",
+            "hosts": "",
+            "rocketchat": ""
+        },
+        {
+            "id": "T3",
+            "title": "T3: Computational Modeling of Semantic Change",
+            "desc": "",
+            "location": "Fortress 1 (Corinthia Hotel)",
+            "start_time": "2024-03-21 08:00:00",
+            "end_time": "2024-03-21 16:30:00",
+            "hosts": "",
+            "rocketchat": ""
+        },
+        {
+            "id": "T4",
+            "title": "T4: Item Response Theory for Natural Language Processing",
+            "desc": "",
+            "location": "Fortress 2 (Corinthia Hotel)",
+            "start_time": "2024-03-21 08:00:00",
+            "end_time": "2024-03-21 11:30:00",
+            "hosts": "",
+            "rocketchat": ""
+        },
+        {
+            "id": "T5",
+            "title": "T5: Language + Molecules",
+            "desc": "",
+            "location": "Radisson (Radisson Blu Hotel)",
+            "start_time": "2024-03-21 08:00:00",
+            "end_time": "2024-03-21 11:30:00",
+            "hosts": "",
+            "rocketchat": ""
+        }
+    ]
+}

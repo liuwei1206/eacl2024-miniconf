@@ -1,0 +1,52 @@
+{
+    "Break 1": {
+        "display_name": "Break 1",
+        "end_time": "2024-03-17 19:30:00",
+        "events": {
+            "Welcome Reception": {
+                "chairs": [],
+                "end_time": "2024-03-17 19:30:00",
+                "id": "Welcome Reception",
+                "link": null,
+                "paper_ids": [],
+                "room": null,
+                "session": "Break 1",
+                "start_time": "2024-03-17 17:00:00",
+                "track": "Break",
+                "type": "Break"
+            }
+        },
+        "id": "Welcome Reception",
+        "name": "Break 1",
+        "plenary_events": {},
+        "start_time": "2024-03-17 17:00:00",
+        "tutorial_events": {},
+        "type": "break",
+        "workshop_events": {}
+    },
+    "Break 2": {
+        "display_name": "Break 2",
+        "end_time": "2024-03-19 21:00:00",
+        "events": {
+            "Conference Social Dinner": {
+                "chairs": [],
+                "end_time": "2024-03-19 21:00:00",
+                "id": "Conference Social Dinner",
+                "link": null,
+                "paper_ids": [],
+                "room": null,
+                "session": "Break 2",
+                "start_time": "2024-03-19 18:00:00",
+                "track": "Break",
+                "type": "Break"
+            }
+        },
+        "id": "Conference Social Dinner",
+        "name": "Break 2",
+        "plenary_events": {},
+        "start_time": "2024-03-19 18:00:00",
+        "tutorial_events": {},
+        "type": "break",
+        "workshop_events": {}
+    }
+}
