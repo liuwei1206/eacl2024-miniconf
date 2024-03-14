@@ -20,6 +20,7 @@ from openpyxl import load_workbook
 
 import sys
 sys.path.append('/Users/liuwei/PycharmProjects/eacl2024-miniconf')
+sys.path.append('/hits/fast/nlp/liuwi/PycharmProjects/eacl2024-miniconf')
 
 from eacl_miniconf.data import (
     PLENARIES,
@@ -84,7 +85,7 @@ def get_session_event_name(session: str, track: str, session_type: str):
 
 
 def determine_program(category: str):
-    if category in ["CL", "TACL", "Main-Oral", "Main-Poster"]:
+    if category in ["CL", "TACL", "Main-Oral", "Main-Poster", "Oral", "Poster"]:
         return MAIN
     elif category == "Findings":
         return FINDINGS
@@ -173,6 +174,8 @@ def parse_authors(
     anthology_id = to_anthology_id(paper_id)
     anthology_id = None
     if anthology_id is None:
+        if type(author_string) == float:
+            return "Unknow"
         authors = author_string.split(",")
         if len(authors) == 1:
             authors = authors[0].split(" and ")
@@ -1341,8 +1344,8 @@ class DateTimeEncoder(json.JSONEncoder):
 #         json.dump(conf_dict, f, cls=DateTimeEncoder, sort_keys=True, indent=2)
 
 def main(
-    oral_tsv: str = "data/eacl_2024/new_data/eacl-oral-papers.tsv",
-    poster_tsv: str = "data/eacl_2024/new_data/eacl-poster-papers.tsv",
+    oral_tsv: str = "data/eacl_2024/new_data/oral-papers.tsv",
+    poster_tsv: str = "data/eacl_2024/new_data/poster-papers.tsv",
     virtual_tsv: str = "data/eacl_2024/new_data/virtual-papers.tsv",
     spotlight_tsv: str = "data/eacl_2024/new_data/spotlight-papers.tsv",
     extras_xlsx: str = "data/eacl_2024/new_data/emnlp-2023-events-export-2023-07-09 (1).xlsx",

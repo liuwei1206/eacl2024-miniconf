@@ -5,7 +5,7 @@ date: March 17 &ndash; 22, 2024
 proceedings_title: The 18th Conference of the European Chapter of the Association for Computational Linguistics
 citation_date: March 2024
 analytics: G-9X8H03BYC2
-site_url: https://virtual.2023.emnlp.org
+site_url: https://virtual.2024.eacl.org
 logo:
   image: static/images/eacl2024/acl-logo.png
   height: 45px
@@ -15,7 +15,7 @@ page_title:
   separator: ': '
 background_image: static/images/eacl2024/header.png
 organization: Association for Computational Linguistics
-social_tag: '#emnlp2023'
+social_tag: '#eacl2024'
 
 # Path to the folder of paper images.
 paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
@@ -27,15 +27,15 @@ enable_chat: true
 chat_server: acl.rocket.chat
 channels_stats_server: https://emnlp2020-channels-stats.azure-api.net
 
-gather_town: https://www.virtualchair.net/events/emnlp2023
-connected_papers_conference_name: EMNLP2023
+gather_town: https://app.gather.town/app/XDzSQW1b0mpTTAYr/EACL2024
+connected_papers_conference_name: EACL2024
 
-calendar:
-  start: '2023-12-06'
-  end: '2023-12-10'
 #calendar:
-#  start: '2024-03-17'
-#  end: '2024-03-24'
+#  start: '2023-12-06'
+#  end: '2023-12-10'
+calendar:
+  start: '2024-03-17'
+  end: '2024-03-24'
 
 navigation_bar:
   order:

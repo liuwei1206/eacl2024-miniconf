@@ -359,5 +359,37 @@
             "url": "https://computel-workshop.org/computel-7/",
             "chair": "Sarah Moeller, Aditi Chaudhary, Alexis Palmer, Shruti Rijhwani, Lane Schwartz, Daisy Rosenblum, Antti Arppe, Ryan Henke, Christopher Cox, Godfred Agyapong"
         }
+    ],
+    "social_events": [
+        {
+            "title": "Welcome Reception",
+            "id": "welcome-reception",
+            "day": "Sunday, March 17, 2024",
+            "venue": "",
+            "start_time": "2024-03-17 18:00:00",
+            "end_time": "2024-03-17 20:30:00",
+            "desc": "",
+            "location": ""
+        },
+        {
+            "title": "Social Event Doors Open",
+            "id": "social-event-doors-open",
+            "day": "Tuesday, March 19, 2024",
+            "venue": "",
+            "start_time": "2024-03-19 16:30:00",
+            "end_time": "2024-03-19 17:00:00",
+            "desc": "",
+            "location": ""
+        },
+        {
+            "title": "Social Event Dinner & Entertainment",
+            "id": "social-event-dinner-entertainment",
+            "day": "Tuesday, March 19, 2024",
+            "venue": "",
+            "start_time": "2024-03-19 17:00:00",
+            "end_time": "2024-03-19 20:00:00",
+            "desc": "",
+            "location": ""
+        }
     ]
 }

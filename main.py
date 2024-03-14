@@ -291,7 +291,7 @@ def hydra_main(cfg: DictConfig):
     data_dir = Path(cfg.data_dir)
     # TODO: Don't load pickle, load json, but need to figure out how to parse datetimes back into str
     global conference
-    conference = Conference.parse_file(data_dir / "data" / "conference.json")
+    conference = Conference.parse_file(data_dir / "new_data" / "conference.json")
     if not data_dir.exists():
         raise AssertionError(
             f"Data directory {cfg.data_dir} not found in `data`. Please specify the correct data directory in config."

@@ -63,7 +63,6 @@ def poster_session_time(str):
     items = [opt_item(item) for item in items if item.strip() != ""]
     return "; ".join(items)
 
-
 def prepare_tutorial_data(data_file):
     data = [
         [
@@ -384,17 +383,210 @@ def write_to_excel(data_file):
 
 def convert_oral_csv(data_file):
     df = pd.read_csv(data_file, sep="\t")
-    data = []
+    all_session, all_date, all_start_time, all_end_time = [], [], [], []
+    all_location, all_track, all_pres_order, all_session_title = [], [], [], []
+    all_session_id, all_pid_old, all_pid, all_title = [], [], [], []
+    all_author, all_length, all_cate, all_pref = [], [], [], []
     for index, row in df.iterrows():
-        date = row['Session Date']
-        start_time = row['Time CET (Local)']
-        end_time = (s2t(start_time) + datetime.timedelta(minutes=15)).strptime(str, '%H:%M')
+        # print(row.keys())
+        session = row['Session']
+        date = row['Date']
+        start_time = row['Time CET (Local Time)']
+        t_start_time = datetime.datetime.strptime(start_time, '%H:%M')
+        end_time = (t_start_time + datetime.timedelta(minutes=15)).time()
+        end_time = end_time.strftime('%H:%M')
+        location = row['Room']
+        track = row['Track']
+        presentation_order = row['Pres. Order']
+        session_title = row['Session Name ']
+        session_id_on_underline = ""
+        pid_old = row['Paper ID']
+        pid = pid_old
+        title = row['Paper Title']
+        author = row['Author']
+        length = row['Length']
+        category = row['Category']
+        oral_pref = row['Presentation Preference']
+        print(row['Category'])
+        all_session.append(session.strip())
+        all_date.append(date)
+        all_start_time.append(start_time)
+        all_end_time.append(end_time)
+        all_location.append(location)
+        all_track.append(track)
+        all_pres_order.append(presentation_order)
+        all_session_title.append(session_title)
+        all_session_id.append(session_id_on_underline)
+        all_pid_old.append(pid_old)
+        all_pid.append(pid)
+        all_title.append(title)
+        all_author.append(author)
+        all_length.append(length)
+        all_cate.append(category.strip())
+        all_pref.append(oral_pref)
+
+    data = {
+        'Session': all_session,
+        'Date': all_date,
+        'Start Time': all_start_time,
+        'End Time': all_end_time,
+        'Location': all_location,
+        'Track': all_track,
+        'Presentation Order': all_pres_order,
+        'Session Title': all_session_title,
+        'Session ID on Underline': all_session_id,
+        'PID-old': all_pid_old,
+        'PID': all_pid,
+        'Title': all_title,
+        'Author': all_author,
+        'Length': all_length,
+        'Category': all_cate,
+        'Oral(pref)': all_pref
+    }
+
+    df1 = pd.DataFrame(data)
+    df1.to_csv('oral-papers.tsv', sep="\t", index=False)
 
 
+def convert_poster_csv(data_file):
+    def poster_time(str):
+        items =str.split("-")
+        items = [item.strip() for item in items if item.strip() != ""]
+        assert (len(items) == 2), (len(items))
+        if ":" in items[0]:
+            start_time = items[0]
+        else:
+            start_time = "{}:00".format(items[0])
+
+        if ":" in items[1]:
+            end_time = items[1]
+        else:
+            end_time = "{}:00".format(items[1])
+
+        return start_time, end_time
+
+    df = pd.read_csv(data_file, sep="\t")
+    all_session_old, all_date, all_start_time, all_end_time = [], [], [], []
+    all_pid_old, all_pid, all_title, all_author = [], [], [], []
+    all_cate, all_track, all_session, all_session_id = [], [], [], []
+    all_pref, all_hybrid, all_board, all_location, all_pres_order = [], [], [], [], []
+    for index, row in df.iterrows():
+        # print(row.keys())
+        session = row['Conf. Session']
+        session_old = session
+        date = row['Date']
+        time = row['Time CET (Local Time)']
+        start_time, end_time = poster_time(time)
+        pid_old = row['Paper ID']
+        pid = pid_old
+        title = row['Paper Title']
+        author = row['Authors']
+        if type(author) == float:
+            author = row['First Authors']
+        if "demo" in pid.lower():
+            category = "Demo"
+        else:
+            category = "Poster"
+        track = row['Track']
+        session_id = ""
+        poster_pref = row['Status']
+        hybrid = ""
+        board = row['Board ']
+        location = ""
+        pres_order = ""
+        all_session.append(session.strip())
+        all_session_old.append(session_old.strip())
+        all_date.append(date)
+        all_start_time.append(start_time)
+        all_end_time.append(end_time)
+        all_pid_old.append(pid_old)
+        all_pid.append(pid)
+        all_title.append(title)
+        all_author.append(author)
+        all_cate.append(category)
+        all_track.append(track)
+        all_session_id.append(session_id)
+        all_pref.append(poster_pref)
+        all_hybrid.append(hybrid)
+        all_board.append(board)
+        all_location.append(location)
+        all_pres_order.append(pres_order)
+
+    data = {
+        'Session-old': all_session_old,
+        'Date': all_date,
+        'Start Time': all_start_time,
+        'End Time': all_end_time,
+        'PID-old': all_pid_old,
+        'PID': all_pid,
+        'Title': all_title,
+        'Author': all_author,
+        'Category': all_cate,
+        'Track': all_track,
+        'Session': all_session,
+        'Poster(pref)': all_pref,
+        'Hybrid Unit No': all_hybrid,
+        'Assigned Board': all_board,
+        'Location': all_location,
+        'Presentation Order': all_pres_order
+    }
+
+    df1 = pd.DataFrame(data)
+    df1.to_csv('poster-papers.tsv', sep="\t", index=False)
+
+def generate_plenary_json(data_file):
+    df = pd.read_excel(data_file, sheet_name='Plenary Schedule')
+    data = {}
+    for index, row in df.iterrows():
+        date = row['Date']
+        bio = row['bio']
+        chairs = []
+        end_time = None # row['End Time']
+        id = row['id']
+        image_url = None
+        institute = row['ins']
+        link = None
+        paper_ids = []
+        presenter = row['Presenter']
+        room = row["Room"]
+        session = row['id']
+        start_time = None # row['Start Time']
+        title = row['Title']
+        track = "Plenary"
+        ttype = "Plenary Sessions"
+        video_url = None
+        abstract = "{}, Time: {} - {}".format(date.strftime("%Y-%m-%d"), row['Start Time'][:5], row['End Time'][:5])
+
+        sample = {
+            'abstract': abstract,
+            'bio': bio,
+            'chairs': chairs,
+            'end_time': end_time,
+            'id': id,
+            'image_url': image_url,
+            'institution': institute,
+            'link': link,
+            'paper_ids': paper_ids,
+            'presenter': presenter,
+            'room': room,
+            'session': session,
+            'start_time': start_time,
+            'title': title,
+            'track': track,
+            'type': ttype,
+            'video_url': video_url
+        }
+
+        data[id] = sample
+
+    with open('plenaries.json', 'w') as file:
+        json.dump(data, file, indent=4)
 
 
 if __name__ == "__main__":
     data_file = "EACL24-Events.xlsx"
-    write_to_excel(data_file)
-
+    # write_to_excel(data_file)
+    # convert_oral_csv("eacl-oral-papers.tsv")
+    # convert_poster_csv("eacl-poster-papers.tsv")
+    generate_plenary_json("inputs.xlsx")
 
