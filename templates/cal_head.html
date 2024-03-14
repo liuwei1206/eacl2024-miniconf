@@ -76,7 +76,8 @@
                         var obj = zoned_events[i];
                         obj["start"] = moment(obj["start"]).tz(tz).format();
                         obj["end"] = moment(obj["end"]).tz(tz).format();
-                        obj["title"] = obj["title"] + ", Room: " + obj["location"];
+                        // obj["title"] = obj["title"] + ", Room: " + obj["location"];
+                        obj["title"] = obj["title"] + obj["location"];
 
 <!--                        if (obj["view"] === "day" && view !== "timeGridDay" ||-->
 <!--                            obj["view"] === "week" && view !== "timeGridWeek" ||-->

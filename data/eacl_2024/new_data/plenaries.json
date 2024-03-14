@@ -1,6 +1,6 @@
 {
     "opening-session": {
-        "abstract": "2024-03-18, Time: 08:00 - 08:30",
+        "abstract": "Monday, March 18 - Time: 08:00 - 08:30",
         "bio": "TBD",
         "chairs": [],
         "end_time": null,
@@ -19,7 +19,7 @@
         "video_url": null
     },
     "keynote-01": {
-        "abstract": "2024-03-18, Time: 08:30 - 09:30",
+        "abstract": "Monday, March 18 - Time: 08:30 - 09:30",
         "bio": "Dr. Hongning Wang is now an associate professor at the Department of Computer Science and Technology at Tsinghua University. Prior to that, he was the Copenhaver Associate Professor in the Department of Computer Science at the University of Virginia. He received his PhD degree in computer science at the University of Illinois at Champaign-Urbana in 2014. His research generally lies in the intersection among machine learning and information retrieval, with a special focus on sequential decision optimization and computational user modeling. His work has generated over 100 research papers in top venues in data mining and information retrieval areas. He is a recipient of 2016 National Science Foundation CAREER Award, 2020 Google Faculty Research Award, and SIGIR\u20192019 Best Paper Award.",
         "chairs": [],
         "end_time": null,
@@ -38,7 +38,7 @@
         "video_url": null
     },
     "keynote-02": {
-        "abstract": "2024-03-19, Time: 08:00 - 09:00",
+        "abstract": "Tuesday, March 19 - Time: 08:00 - 09:00",
         "bio": "Hinrich Schuetze is Professor at the Center for Information and Language Processing at LMU Munich. His lab is engaged in research on multilinguality, representation learning and linguistic analysis of NLP models. His research has been funded by NSF, the German National Science Foundation and the European Research Council (ERC Advanced Grant), inter alia. Hinrich is coauthor of two well-known textbooks (Foundations of Statistical Natural Language Processing and Introduction to Information Retrieval), a fellow of HessianAI, ELLIS (the European Laboratory for Learning and Intelligent Systems) and ACL (Association for Computational Linguistics) and (co-)awardee of several best paper awards and the ACL 2023 25-year test of time award.",
         "chairs": [],
         "end_time": null,
@@ -57,7 +57,7 @@
         "video_url": null
     },
     "business-meeting": {
-        "abstract": "2024-03-19, Time: 12:00 - 12:45",
+        "abstract": "Tuesday, March 19 - Time: 12:00 - 12:45",
         "bio": "TBD",
         "chairs": [],
         "end_time": null,
@@ -76,7 +76,7 @@
         "video_url": null
     },
     "keynote-03": {
-        "abstract": "2024-03-20, Time: 13:45 - 14:45",
+        "abstract": "Wednesday, March 20 - Time: 13:45 - 14:45",
         "bio": "Mirella Lapata is professor of natural language processing in the School of Informatics at the University of Edinburgh. Her research focuses on getting computers to understand, reason with, and generate natural language. She is the first recipient (2009) of the British Computer Society and Information Retrieval Specialist Group (BCS/IRSG) Karen Sparck Jones award and a Fellow of the Royal Society of Edinburgh, the ACL, and Academia Europaea. Mirella has also received best paper awards in leading NLP conferences and has served on the editorial boards of the Journal of Artificial Intelligence Research, the Transactions of the ACL, and Computational Linguistics. She was president of SIGDAT (the group that organizes EMNLP) in 2018. She has been awarded an ERC consolidator grant, a Royal Society Wolfson Research Merit Award, and a UKRI Turing AI World-Leading Researcher Fellowship.",
         "chairs": [],
         "end_time": null,
@@ -95,7 +95,7 @@
         "video_url": null
     },
     "best-paper": {
-        "abstract": "2024-03-20, Time: 15:00 - 15:45",
+        "abstract": "Wednesday, March 20 - Time: 15:00 - 15:45",
         "bio": "TBD",
         "chairs": [],
         "end_time": null,
@@ -114,7 +114,7 @@
         "video_url": null
     },
     "closing-session": {
-        "abstract": "2024-03-20, Time: 15:45 - 16:30",
+        "abstract": "Wednesday, March 20 - Time: 15:45 - 16:30",
         "bio": "TBD",
         "chairs": [],
         "end_time": null,

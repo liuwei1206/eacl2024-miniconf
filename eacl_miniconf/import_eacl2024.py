@@ -253,7 +253,7 @@ class Eacl2023Parser:
         self.tutorials: Dict[str, Tutorial] = {}
         self.plenaries: Dict[str, Plenary] = {}
         self.underline_assets: Dict[str, Assets] = {}
-        self.zone = pytz.timezone("Asia/Singapore")
+        self.zone = pytz.timezone("Europe/Malta")
         self.workshops: Dict[str, Workshop] = {}
         self.keywords: Dict[str, Keywords] = {}
         self.spreadsheet_info: Dict = {}

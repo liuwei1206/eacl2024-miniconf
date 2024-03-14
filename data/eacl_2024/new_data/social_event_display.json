@@ -1,17 +1,17 @@
 {
     "Dinner": {
     "display_name": "Social event",
-    "end_time": "2024-03-19T22:00:00+01:00",
+    "end_time": "2024-03-19T22:00:00",
     "events": {
       "id": {
         "chairs": [],
-        "end_time": "2024-03-19T22:00:00+01:00",
+        "end_time": "2024-03-19T22:00:00",
         "id": "social-event-1",
         "link": "https://acl.rocket.chat/channel/paper-event_social-event",
         "paper_ids": [],
         "room": "Corinthia Hotel Rooms",
         "session": "event_session",
-        "start_time": "2024-03-19T17:00:00+01:00",
+        "start_time": "2024-03-19T17:00:00",
         "track": "Dinner",
         "type": "Socials"
       }
@@ -19,24 +19,24 @@
     "id": "social-event-1",
     "name": "Social event",
     "plenary_events": {},
-    "start_time": "2024-03-19T17:00:00+01:00",
+    "start_time": "2024-03-19T17:00:00",
     "tutorial_events": {},
     "type": "Socials",
     "workshop_events": {}
   },
   "Welcome": {
     "display_name": "Welcome reception",
-    "end_time": "2024-03-17T20:30:00+01:00",
+    "end_time": "2024-03-17T20:30:00",
     "events": {
       "id": {
         "chairs": [],
-        "end_time": "2024-03-17T20:30:00+01:00",
+        "end_time": "2024-03-17T20:30:00",
         "id": "social-event-2",
         "link": "https://acl.rocket.chat/channel/paper-event_welcome-reception",
         "paper_ids": [],
         "room": "Radisson Blu",
         "session": "event_session",
-        "start_time": "2024-03-17T18:00:00+01:00",
+        "start_time": "2024-03-17T18:00:00",
         "track": "Welcome",
         "type": "Socials"
       }
@@ -44,7 +44,7 @@
     "id": "social-event-2",
     "name": "Welcome reception",
     "plenary_events": {},
-    "start_time": "2024-03-17T18:00:00+01:00",
+    "start_time": "2024-03-17T18:00:00",
     "tutorial_events": {},
     "type": "Socials",
     "workshop_events": {}

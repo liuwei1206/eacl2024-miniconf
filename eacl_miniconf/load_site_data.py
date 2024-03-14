@@ -145,11 +145,15 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
             else:
                 pass
 
+            if event.room == "nan" or event.room is None or event.room == "":
+                room = ""
+            else:
+                room = ", Room: {}".format(event.room)
             frontend_event = FrontendCalendarEvent(
                 title=day_view_name,
                 start=start,
                 end=end,
-                location="",
+                location=room,
                 # url=f"papers.html?session={session.id}&program=all",
                 url=url,
                 category="time",
@@ -175,12 +179,16 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
 
         ## tutorial event
         for event in session.tutorial_events.values():
+            if event.room == "nan" or event.room is None or event.room == "":
+                room = ""
+            else:
+                room = ", Room: {}".format(event.room)
             frontend_event = FrontendCalendarEvent(
                 # title=f"<b>{event.track}</b>",
                 title=session.name,
                 start=start,
                 end=end,
-                location="",
+                location=room,
                 # TODO: UID probably doesn't work here
                 url=f"tutorial_{event.id}.html",
                 category="time",
@@ -195,13 +203,17 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
 
         ## for plenary event
         for event in session.plenary_events.values():
+            if event.room == "nan" or event.room is None or event.room == "":
+                room = ""
+            else:
+                room = ", Room: {}".format(event.room)
             if (session.name, event.track, event.start_time) not in existing_events:
                 frontend_event = FrontendCalendarEvent(
                     # title=f"<b>{event.track}</b>",
                     title=session.name,
                     start=start,
                     end=end,
-                    location=event.room,
+                    location=room,
                     url=f"plenary_sessions.html",
                     category="time",
                     type=session.type,
@@ -215,12 +227,16 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
 
         ## for workshop event
         for event in session.workshop_events.values():
+            if event.room == "nan" or event.room is None or event.room == "":
+                room = ""
+            else:
+                room = ", Room: {}".format(event.room)
             frontend_event = FrontendCalendarEvent(
                 # title=f"<b>{event.track}</b>",
                 title=session.name,
                 start=start,
                 end=end,
-                location=event.room,
+                location=room,
                 # TODO: UID probably doesn't work here
                 # url="<a href='"+f"workshop_{event.short_name}.html"+"'></a>",
                 url=f"workshop_{event.short_name}.html",
@@ -276,7 +292,8 @@ def generate_paper_events_v2(site_data: SiteData) -> List[Dict[str, Any]]:
             title=week_view_name,
             start=session.start_time,
             end=session.end_time,
-            location="",
+            # location="",
+            location=session.room,
             url=url,
             category="time",
             type=session.type,
@@ -321,7 +338,7 @@ def generate_paper_events_v2(site_data: SiteData) -> List[Dict[str, Any]]:
                 title=day_view_name,
                 start=start,
                 end=end,
-                location="",
+                location=session.room,
                 # url=f"papers.html?session={session.id}&program=all",
                 url=url,
                 category="time",
@@ -708,12 +725,13 @@ def reformat_plenary_data(plenaries):
     # we break less stuff. I do not recommend doing this in general.
     session_data = dict()
     session_day_data = []
-    re_date = re.compile("(\w+), December (\d+).*")
+    re_date = re.compile("(\w+), March (\d+).*")
     re_time = re.compile(".*Time: (\d+:\d+) - (\d+:\d+).*")
     for plenary_key, plenary in plenaries.items():
         # Parse the date and time from the description
         result_date = re_date.search(plenary.abstract)
-        date_string = "2023-12-{}".format(result_date.group(2))
+        print(plenary.abstract, "+++")
+        date_string = "2024-03-{}".format(result_date.group(2))
         plenary_day = result_date.group(1)
         result_time = re_time.search(plenary.abstract)
         start_time_string = result_time.group(1)

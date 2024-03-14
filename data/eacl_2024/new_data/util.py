@@ -483,16 +483,26 @@ def convert_poster_csv(data_file):
         author = row['Authors']
         if type(author) == float:
             author = row['First Authors']
-        if "demo" in pid.lower():
-            category = "Demo"
+        poster_session = row['Poster Session']
+        if "SRW" in poster_session:
+            category = "SRW"
+            track = "Student Research Workshop"
         else:
-            category = "Poster"
-        track = row['Track']
+            if "demo" in pid.lower():
+                category = "Demo"
+            else:
+                category = "Poster"
+            track = row['Track']
         session_id = ""
         poster_pref = row['Status']
+        location = "Radisson"
+        if "person" in poster_pref.lower():
+            poster_pref = "In Person"
+        elif "virtual" in poster_pref.lower():
+            poster_pref = "Virtual"
+            location = "GatherTown"
         hybrid = ""
         board = row['Board ']
-        location = ""
         pres_order = ""
         all_session.append(session.strip())
         all_session_old.append(session_old.strip())
@@ -555,7 +565,7 @@ def generate_plenary_json(data_file):
         track = "Plenary"
         ttype = "Plenary Sessions"
         video_url = None
-        abstract = "{}, Time: {} - {}".format(date.strftime("%Y-%m-%d"), row['Start Time'][:5], row['End Time'][:5])
+        abstract = "{} - Time: {} - {}".format(date.strftime("%A, %B %d"), row['Start Time'][:5], row['End Time'][:5])
 
         sample = {
             'abstract': abstract,
@@ -587,6 +597,6 @@ if __name__ == "__main__":
     data_file = "EACL24-Events.xlsx"
     # write_to_excel(data_file)
     # convert_oral_csv("eacl-oral-papers.tsv")
-    # convert_poster_csv("eacl-poster-papers.tsv")
-    generate_plenary_json("inputs.xlsx")
+    convert_poster_csv("eacl-poster-papers.tsv")
+    # generate_plenary_json("inputs.xlsx")
 
