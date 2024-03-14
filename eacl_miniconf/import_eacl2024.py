@@ -19,7 +19,7 @@ from collections import defaultdict
 from openpyxl import load_workbook
 
 import sys
-sys.path.append('/Users/linyihang/Desktop/emnlp-2023-miniconf')
+sys.path.append('/Users/liuwei/PycharmProjects/eacl2024-miniconf')
 
 from eacl_miniconf.data import (
     PLENARIES,
@@ -1292,25 +1292,73 @@ class DateTimeEncoder(json.JSONEncoder):
             return obj.isoformat()
 
 
+# def main(
+#     oral_tsv: str = "data/eacl_2024/data/oral-papers.tsv",
+#     poster_tsv: str = "data/eacl_2024/data/poster-demo-papers.tsv",
+#     virtual_tsv: str = "data/eacl_2024/data/virtual-papers.tsv",
+#     spotlight_tsv: str = "data/eacl_2024/data/spotlight-papers.tsv",
+#     extras_xlsx: str = "data/eacl_2024/data/emnlp-2023-events-export-2023-07-09 (1).xlsx",
+#     eacl_main_long_proceedings_yaml: str = "data/eacl_2024/data/main/long.yml",
+#     eacl_main_short_proceedings_yaml: str = "data/eacl_2024/data/main/short.yml",
+#     eacl_main_findings_proceedings_yaml: str = "data/eacl_2024/data/main/findings.yml",
+#     eacl_demo_proceedings_yaml: str = "data/eacl_2024/data/demo/papers.yml",
+#     eacl_industry_proceedings_yaml: str = "data/eacl_2024/data/industry/papers.yml",
+#     eacl_srw_proceedings_yaml: str = "data/eacl_2024/data/SRW/papers.yml",
+#     workshop_papers_yml: str = "data/eacl_2024/data/workshop_papers.yaml",
+#     workshops_yaml: str = "data/eacl_2024/data/workshops.yaml",
+#     booklet_json: str = "data/eacl_2024/data/booklet_data.json",
+#     socials_json: str = "data/eacl_2024/data/socials_data.json",
+#     keywords_csv: str = "data/eacl_2024/data/keywords.csv",
+#     eacl_anthology_prefix: str = "https://aclanthology.org/",
+#     out_dir: str = "data/eacl_2024/data/",
+# ):
+#     parser = Eacl2023Parser(
+#         oral_tsv_path=Path(oral_tsv),
+#         poster_tsv_path=Path(poster_tsv),
+#         virtual_tsv_path=Path(virtual_tsv),
+#         spotlight_tsv_path=Path(spotlight_tsv),
+#         extras_xlsx_path=Path(extras_xlsx),
+#         eacl_main_long_proceedings_yaml_path=(eacl_main_long_proceedings_yaml),
+#         eacl_main_short_proceedings_yaml_path=(eacl_main_short_proceedings_yaml),
+#         eacl_main_findings_proceedings_yaml_path=(eacl_main_findings_proceedings_yaml),
+#         eacl_demo_proceedings_yaml_path=Path(eacl_demo_proceedings_yaml),
+#         eacl_industry_proceedings_yaml_path=Path(eacl_industry_proceedings_yaml),
+#         eacl_srw_proceedings_yaml_path=Path(eacl_srw_proceedings_yaml),
+#         workshop_papers_yaml_path=Path(workshop_papers_yml),
+#         workshops_yaml_path=Path(workshops_yaml),
+#         booklet_json_path=Path(booklet_json),
+#         socials_json_path=Path(socials_json),
+#         keywords_csv_path=Path(keywords_csv),
+#         eacl_anthology_prefix=eacl_anthology_prefix,
+#     )
+#     conf = parser.parse()
+#     out_dir = Path(out_dir)
+#     out_dir.mkdir(exist_ok=True, parents=True)
+#     conf_dict = conf.dict()
+#
+#     logging.info("Writing to conference.json")
+#     with open(out_dir / "conference.json", "w") as f:
+#         json.dump(conf_dict, f, cls=DateTimeEncoder, sort_keys=True, indent=2)
+
 def main(
-    oral_tsv: str = "data/eacl_2024/data/oral-papers.tsv",
-    poster_tsv: str = "data/eacl_2024/data/poster-demo-papers.tsv",
-    virtual_tsv: str = "data/eacl_2024/data/virtual-papers.tsv",
-    spotlight_tsv: str = "data/eacl_2024/data/spotlight-papers.tsv",
-    extras_xlsx: str = "data/eacl_2024/data/emnlp-2023-events-export-2023-07-09 (1).xlsx",
-    eacl_main_long_proceedings_yaml: str = "data/eacl_2024/data/main/long.yml",
-    eacl_main_short_proceedings_yaml: str = "data/eacl_2024/data/main/short.yml",
-    eacl_main_findings_proceedings_yaml: str = "data/eacl_2024/data/main/findings.yml",
-    eacl_demo_proceedings_yaml: str = "data/eacl_2024/data/demo/papers.yml",
-    eacl_industry_proceedings_yaml: str = "data/eacl_2024/data/industry/papers.yml",
-    eacl_srw_proceedings_yaml: str = "data/eacl_2024/data/SRW/papers.yml",
-    workshop_papers_yml: str = "data/eacl_2024/data/workshop_papers.yaml",
-    workshops_yaml: str = "data/eacl_2024/data/workshops.yaml",
-    booklet_json: str = "data/eacl_2024/data/booklet_data.json",
-    socials_json: str = "data/eacl_2024/data/socials_data.json",
-    keywords_csv: str = "data/eacl_2024/data/keywords.csv",
+    oral_tsv: str = "data/eacl_2024/new_data/eacl-oral-papers.tsv",
+    poster_tsv: str = "data/eacl_2024/new_data/eacl-poster-papers.tsv",
+    virtual_tsv: str = "data/eacl_2024/new_data/virtual-papers.tsv",
+    spotlight_tsv: str = "data/eacl_2024/new_data/spotlight-papers.tsv",
+    extras_xlsx: str = "data/eacl_2024/new_data/emnlp-2023-events-export-2023-07-09 (1).xlsx",
+    eacl_main_long_proceedings_yaml: str = "data/eacl_2024/new_data/main/long.yml",
+    eacl_main_short_proceedings_yaml: str = "data/eacl_2024/new_data/main/short.yml",
+    eacl_main_findings_proceedings_yaml: str = "data/eacl_2024/new_data/main/findings.yml",
+    eacl_demo_proceedings_yaml: str = "data/eacl_2024/new_data/demo/papers.yml",
+    eacl_industry_proceedings_yaml: str = "data/eacl_2024/new_data/industry/papers.yml",
+    eacl_srw_proceedings_yaml: str = "data/eacl_2024/new_data/SRW/papers.yml",
+    workshop_papers_yml: str = "data/eacl_2024/new_data/workshop_papers.yaml",
+    workshops_yaml: str = "data/eacl_2024/new_data/workshops.yaml",
+    booklet_json: str = "data/eacl_2024/new_data/booklet_data.json",
+    socials_json: str = "data/eacl_2024/new_data/socials_data.json",
+    keywords_csv: str = "data/eacl_2024/new_data/keywords.csv",
     eacl_anthology_prefix: str = "https://aclanthology.org/",
-    out_dir: str = "data/eacl_2024/data/",
+    out_dir: str = "data/eacl_2024/new_data/",
 ):
     parser = Eacl2023Parser(
         oral_tsv_path=Path(oral_tsv),

@@ -8,7 +8,7 @@ import typer
 from pydantic import BaseModel
 
 from eacl_miniconf.data import Paper, WORKSHOP, AnthologyAuthor
-from eacl_miniconf.import_eacl2023 import TLDR_LENGTH
+from eacl_miniconf.import_eacl2024 import TLDR_LENGTH
 
 CUSTOM_PAPER_YML = {
     Path("workshop-data/DISRPT"): Path("workshop-data/DISRPT/data"),

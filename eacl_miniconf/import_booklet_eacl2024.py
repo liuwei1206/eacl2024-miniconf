@@ -17,7 +17,7 @@ from eacl_miniconf.data import (
     PLENARIES,
     CONFERENCE_TZ,
 )
-
+"""
 WS_ID_TO_SHORT = {
     "workshop_1_1": "CoNLL",
     "workshop_2_1": "CRAC",
@@ -43,7 +43,29 @@ WS_ID_TO_SHORT = {
     "workshop_19": "NILLI",
     "workshop_20": "BLP",
 }
+"""
 
+WS_ID_TO_SHORT = {
+    "Workshop-1": "CODI",
+    "Workshop-2": "CLPsych",
+    "Workshop-3": "LTEDI",
+    "Workshop-4": "SCI-CHAT",
+    "Workshop-5": "UnImplicit",
+    "Workshop-6": "MOOMIN",
+    "Workshop-7": "CALD-pseudo",
+    "Workshop-8": "Computel-7",
+    "Workshop-9": "WNUT",
+    "Workshop-10": "LaTeCH-CLfL",
+    "Workshop-11": "CASE",
+    "Workshop-12": "SIGTYP",
+    "Workshop-13": "PERSONALIZE",
+    "Workshop-14": "LAW-XVIII",
+    "Workshop-15": "TEICAI",
+    "Workshop-16": "UncertaiNLP",
+    "Workshop-17": "NLP4HR",
+    "Workshop-18": "SCALE-LLM",
+    "Workshop-19": "DravidianLangTech",
+}
 
 class Booklet(BaseModel):
     plenaries: Dict[str, Plenary]

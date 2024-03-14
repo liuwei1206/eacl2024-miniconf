@@ -1,9 +1,7 @@
 import math
 import os
 import json
-from datetime import datetime
-from datetime import datetime
-
+import datetime
 import pandas as pd
 import openpyxl
 import json
@@ -27,13 +25,13 @@ def str_to_date(s):
     return datestring
 
 def s2d(str):
-    return datetime.strptime(str, '%Y-%m-%d').date()
+    return datetime.datetime.strptime(str, '%Y-%m-%d').date()
 
 def s2dt(str):
-    return datetime.strptime(str, '%Y-%m-%d %H:%M:%S')
+    return datetime.datetime.strptime(str, '%Y-%m-%d %H:%M:%S')
 
 def s2t(str):
-    return datetime.strptime(str, '%H:%M').time()
+    return datetime.datetime.strptime(str, '%H:%M').time()
 
 def poster_session_time(str):
     if str is None or type(str) == float:
@@ -131,7 +129,7 @@ def prepare_workshop_data(data_file):
         sponsors = row[29] # row['Sponsor Name(s)']
         poster_session = row[26]
         poster_session = poster_session_time(poster_session)
-        desc = ""
+        desc = title
         url = _get_link_if_exists(ws.cell(row=index+2, column=10))
 
         data.append(
@@ -155,25 +153,33 @@ def prepare_workshop_data(data_file):
 
 def prepare_plenary_data(data_file):
     data = [
-        ["EACL 2024 General Chair", "opening-session", "Opening Session and Presidential Address", "",
+        [s2d("2024-03-18"), s2t("08:00"), s2t("08:30"), "Radisson",
+         "EACL 2024 General Chair", "opening-session", "Opening Session and Presidential Address", "",
          "In-Person", "March 18 - Time: 08:00 - 08:30", "TBD", "EACL 2024"],
-        ["Hongning Wang", "keynote-01", "Human vs. Generative AI in Content Creation Competition: Symbiosis or Conflict?", "",
+        [s2d("2024-03-18"), s2t("08:30"), s2t("09:30"), "Radisson",
+         "Hongning Wang", "keynote-01", "Human vs. Generative AI in Content Creation Competition: Symbiosis or Conflict?", "",
          "In-Person", "March 18 - Time: 08:30 - 09:30", "Dr. Hongning Wang is now an associate professor at the Department of Computer Science and Technology at Tsinghua University. Prior to that, he was the Copenhaver Associate Professor in the Department of Computer Science at the University of Virginia. He received his PhD degree in computer science at the University of Illinois at Champaign-Urbana in 2014. His research generally lies in the intersection among machine learning and information retrieval, with a special focus on sequential decision optimization and computational user modeling. His work has generated over 100 research papers in top venues in data mining and information retrieval areas. He is a recipient of 2016 National Science Foundation CAREER Award, 2020 Google Faculty Research Award, and SIGIR’2019 Best Paper Award.",
          "Tsinghua University"],
-        ["Hinrich Schütze", "keynote-02", "Quality Data for LLMs: Challenges and Opportunities for NLP", "",
+        [s2d("2024-03-19"), s2t("08:00"), s2t("09:00"), "Radisson",
+         "Hinrich Schütze", "keynote-02", "Quality Data for LLMs: Challenges and Opportunities for NLP", "",
          "In-Person", "March 19 - Time: 08:00 - 09:00", "Hinrich Schuetze is Professor at the Center for Information and Language Processing at LMU Munich. His lab is engaged in research on multilinguality, representation learning and linguistic analysis of NLP models. His research has been funded by NSF, the German National Science Foundation and the European Research Council (ERC Advanced Grant), inter alia. Hinrich is coauthor of two well-known textbooks (Foundations of Statistical Natural Language Processing and Introduction to Information Retrieval), a fellow of HessianAI, ELLIS (the European Laboratory for Learning and Intelligent Systems) and ACL (Association for Computational Linguistics) and (co-)awardee of several best paper awards and the ACL 2023 25-year test of time award.",
          "Ludwig Maximilian University of Munich"],
-        ["EACL 2024 Board", "business-meeting", "Business Meeting", "",
+        [s2d("2024-03-19"), s2t("12:00"), s2t("12:45"), "Radisson",
+         "EACL 2024 Board", "business-meeting", "Business Meeting", "",
          "In-Person", "March 19 - Time: 12:00 - 12:45", "TBD", "EACL 2024"],
-        ["Mirella Lapata", "keynote-03", "Prompting is not all you need! Or why Structure and Representations still matter in NLP", "",
+        [s2d("2024-03-20"), s2t("13:45"), s2t("14:45"), "Radisson",
+         "Mirella Lapata", "keynote-03", "Prompting is not all you need! Or why Structure and Representations still matter in NLP", "",
          "In-Person", "March 20 - Time: 13:45 - 14:45", "Mirella Lapata is professor of natural language processing in the School of Informatics at the University of Edinburgh. Her research focuses on getting computers to understand, reason with, and generate natural language. She is the first recipient (2009) of the British Computer Society and Information Retrieval Specialist Group (BCS/IRSG) Karen Sparck Jones award and a Fellow of the Royal Society of Edinburgh, the ACL, and Academia Europaea. Mirella has also received best paper awards in leading NLP conferences and has served on the editorial boards of the Journal of Artificial Intelligence Research, the Transactions of the ACL, and Computational Linguistics. She was president of SIGDAT (the group that organizes EMNLP) in 2018. She has been awarded an ERC consolidator grant, a Royal Society Wolfson Research Merit Award, and a UKRI Turing AI World-Leading Researcher Fellowship.",
          "University of Edinburgh"],
-        ["EACL 2024 General Chair", "best-paper", "Best Paper Awards", "",
+        [s2d("2024-03-20"), s2t("15:00"), s2t("15:45"), "Radisson",
+         "EACL 2024 General Chair", "best-paper", "Best Paper Awards", "",
          "In-Person", "March 20 - Time: 15:00 - 15:45", "TBD", "EACL 2024"],
-        ["EACL 2024 General Chair", "closing-session", "Closing Remarks & Upcoming Conference Announcements", "",
+        [s2d("2024-03-20"), s2t("15:45"), s2t("16:30"), "Radisson",
+         "EACL 2024 General Chair", "closing-session", "Closing Remarks & Upcoming Conference Announcements", "",
          "In-Person", "March 20 - Time: 15:45 - 16:30", "TBD", "EACL 2024"],
     ]
-    column_names = ['Presenter', 'id', 'Title', 'Session Name', 'Presentation Mode', 'Desc', 'bio', 'ins']
+    column_names = ['Date', 'Start Time', 'End Time', 'Room', 'Presenter', 'id', 'Title',
+                    'Session Name', 'Presentation Mode', 'Desc', 'bio', 'ins']
 
     sheet_name = "Plenary Schedule"
     df1 = pd.DataFrame(
@@ -323,15 +329,6 @@ def prepare_paper_data(data_file):
     return data, column_names, sheet_name
 
 def write_to_excel(data_file):
-    # prepare_tutorial_data(data_file=data_file)
-    # prepare_workshop_data(data_file)
-    # prepare_plenary_data(data_file)
-    # prepare_break_data(data_file)
-    # prepare_affinity_data(data_file)
-    # prepare_poster_data(data_file)
-    # prepare_oral_data(data_file)
-    # prepare_paper_data(data_file)
-
     tutoral_data, tutorial_names, tutorial_sheet = prepare_tutorial_data(data_file)
     workshop_data, workshop_names, workshop_sheet = prepare_workshop_data(data_file)
     plenary_data, plenary_names, plenary_sheet = prepare_plenary_data(data_file)
@@ -383,6 +380,17 @@ def write_to_excel(data_file):
     df7.to_excel(writer, sheet_name=break_sheet, index=False)
     df8.to_excel(writer, sheet_name=affi_sheet, index=False)
     writer.close()
+
+
+def convert_oral_csv(data_file):
+    df = pd.read_csv(data_file, sep="\t")
+    data = []
+    for index, row in df.iterrows():
+        date = row['Session Date']
+        start_time = row['Time CET (Local)']
+        end_time = (s2t(start_time) + datetime.timedelta(minutes=15)).strptime(str, '%H:%M')
+
+
 
 
 if __name__ == "__main__":
