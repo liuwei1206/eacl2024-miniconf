@@ -44,10 +44,10 @@ class EaclRcHelper:
         session: sessions.Session,
         dry_run: bool = False,
     ):
-        proj_path = dirname(dirname(dirname(__file__)))
-        program_json_path = os.path.join(proj_path, program_json_path)
-        booklet_json_path = os.path.join(proj_path, booklet_json_path)
-        workshops_yaml_path = os.path.join(proj_path, workshops_yaml_path)
+        # proj_path = dirname(dirname(dirname(__file__)))
+        # program_json_path = os.path.join(proj_path, program_json_path)
+        # booklet_json_path = os.path.join(proj_path, booklet_json_path)
+        # workshops_yaml_path = os.path.join(proj_path, workshops_yaml_path)
         self.conference: Conference = Conference.parse_file(program_json_path)
         with open(booklet_json_path) as f:
             self.booklet = json.load(f)
@@ -254,14 +254,16 @@ def hydra_main(cfg: DictConfig):
 
 
 if __name__ == "__main__":
-    # hydra_main()
+    hydra_main()
 
     ## for test connection
+    """
     with sessions.Session() as session:
         rocket = RocketChat(
-            user_id="5MX6yMtn4f9sZQ86C",
-            auth_token="tqavEbwkcoafkWWeoYf17H_S1ys99OD_Ei66mgll7kO",
+            user_id="",
+            auth_token="",
             server_url="https://acl.rocket.chat",
             session=session,
         )
     print(rocket.me().json())
+    """
