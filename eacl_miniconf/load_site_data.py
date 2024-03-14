@@ -161,7 +161,7 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 view="day",
             )
             event_key = ""
-            event_key = "{}+{}+{}".format(day_view_name, event.track, str(event.start_time).split()[0])
+            event_key = "{}+{}+{}+{}".format(day_view_name, event.track, str(event.start_time).split()[0], room)
             if existing_events[event_key] == 0:
                 # if "Poster: Industry" in day_view_name:
                     # print("---")
@@ -195,7 +195,7 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 type=session.type,
                 view="day",
             )
-            event_key = "{}+{}+{}".format(session.name, event.track, event.start_time)
+            event_key = "{}+{}+{}+{}".format(session.name, event.track, event.start_time, room)
             if existing_events[event_key] == 0:
                 existing_events[event_key] += 1
                 overall_calendar.append(frontend_event)
@@ -219,7 +219,7 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                     type=session.type,
                     view="day",
                 )
-                event_key = "{}+{}+{}".format(session.name, event.track, event.start_time)
+                event_key = "{}+{}+{}+{}".format(session.name, event.track, event.start_time, room)
                 if existing_events[event_key] == 0:
                     existing_events[event_key] += 1
                     overall_calendar.append(frontend_event)
@@ -244,7 +244,7 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 type=session.type,
                 view="day",
             )
-            event_key = "{}+{}+{}".format(session.name, event.track, event.start_time)
+            event_key = "{}+{}+{}+{}".format(session.name, event.track, event.start_time, room)
             if existing_events[event_key] == 0:
                 existing_events[event_key] += 1
                 overall_calendar.append(frontend_event)
