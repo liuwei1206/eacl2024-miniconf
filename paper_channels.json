@@ -1,6 +1,4 @@
-{"paper_id": "1-SRW", "channel_name": "paper-1-SRW", "paper_title": "AutoAugment Is What You Need: Enhancing Rule-based Augmentation Methods in Low-resource Regimes"}
 {"paper_id": "10", "channel_name": "paper-10", "paper_title": "Next Visit Diagnosis Prediction via Medical Code-Centric Multimodal Contrastive EHR Modelling with Hierarchical Regularisation"}
-{"paper_id": "10-SRW", "channel_name": "paper-10-SRW", "paper_title": "Distribution Shifts Are Bottlenecks: Extensive Evaluation for Grounding Language Models to Knowledge Bases"}
 {"paper_id": "100", "channel_name": "paper-100", "paper_title": "Re3val: Reinforced and Reranked Generative Retrieval"}
 {"paper_id": "102-Oral", "channel_name": "paper-102-Oral", "paper_title": "Quantifying the Hyperparameter Sensitivity of Neural Networks for Character-level Sequence-to-Sequence Tasks"}
 {"paper_id": "103-Oral", "channel_name": "paper-103-Oral", "paper_title": "Examining Gender and Racial Bias in Large Vision--Language Models Using a Novel Dataset of Parallel Images"}
@@ -40,7 +38,6 @@
 {"paper_id": "148-Oral", "channel_name": "paper-148-Oral", "paper_title": "LaMini-LM: A Diverse Herd of Distilled Models from Large-Scale Instructions"}
 {"paper_id": "149", "channel_name": "paper-149", "paper_title": "Automated Cognate Detection as a Supervised Link Prediction Task with Cognate Transformer"}
 {"paper_id": "149-Oral", "channel_name": "paper-149-Oral", "paper_title": "Automated Cognate Detection as a Supervised Link Prediction Task with Cognate Transformer"}
-{"paper_id": "15-SRW", "channel_name": "paper-15-SRW", "paper_title": "AttriSage: Product Attribute Value Extraction Using Graph Neural Networks"}
 {"paper_id": "150", "channel_name": "paper-150", "paper_title": "Capturing the Relationship Between Sentence Triplets for LLM and Human-Generated Texts to Enhance Sentence Embeddings"}
 {"paper_id": "151", "channel_name": "paper-151", "paper_title": "Harmonizing Code-mixed Conversations: Personality-assisted Code-mixed Response Generation in Dialogues"}
 {"paper_id": "153", "channel_name": "paper-153", "paper_title": "Source Identification in Abstractive Summarization"}
@@ -63,7 +60,6 @@
 {"paper_id": "166", "channel_name": "paper-166", "paper_title": "Investigating grammatical abstraction in language models using few-shot learning of novel noun gender"}
 {"paper_id": "168-Oral", "channel_name": "paper-168-Oral", "paper_title": "Document Structure in Long Document Transformers"}
 {"paper_id": "17", "channel_name": "paper-17", "paper_title": "ParrotTTS: Text-to-speech synthesis exploiting disentangled self-supervised representations"}
-{"paper_id": "17-SRW", "channel_name": "paper-17-SRW", "paper_title": "HypoTermQA: Hypothetical Terms Dataset for Benchmarking Hallucination Tendency of LLMs"}
 {"paper_id": "170", "channel_name": "paper-170", "paper_title": "The Role of Data Curation in Image Captioning"}
 {"paper_id": "170-Oral", "channel_name": "paper-170-Oral", "paper_title": "The Role of Data Curation in Image Captioning"}
 {"paper_id": "171-Oral", "channel_name": "paper-171-Oral", "paper_title": "Large-Scale Bitext Corpora Provide New Evidence for Cognitive Representations of Spatial Terms"}
@@ -92,7 +88,6 @@
 {"paper_id": "199-Oral", "channel_name": "paper-199-Oral", "paper_title": "“Define Your Terms” : Enhancing Efficient Offensive Speech Classification with Definition"}
 {"paper_id": "2", "channel_name": "paper-2", "paper_title": "Enhancing Ethical Explanations of Large Language Models through Iterative Symbolic Refinement"}
 {"paper_id": "2-Oral", "channel_name": "paper-2-Oral", "paper_title": "Enhancing Ethical Explanations of Large Language Models through Iterative Symbolic Refinement"}
-{"paper_id": "2-SRW", "channel_name": "paper-2-SRW", "paper_title": "Generating Diverse Translation with Perturbed $k$nn-MT"}
 {"paper_id": "200", "channel_name": "paper-200", "paper_title": "VlogQA: Task, Dataset, and Baseline Models for Vietnamese Spoken-Based Machine Reading Comprehension"}
 {"paper_id": "201-Oral", "channel_name": "paper-201-Oral", "paper_title": "CEV-LM: Controlled Edit Vector Language Model for Shaping Natural Language Generations"}
 {"paper_id": "202-Oral", "channel_name": "paper-202-Oral", "paper_title": "It's All Relative: Learning Interpretable Models for Scoring Subjective Bias in Documents from Pairwise Comparisons"}
@@ -130,7 +125,6 @@
 {"paper_id": "236-Oral", "channel_name": "paper-236-Oral", "paper_title": "Kardeş-NLU: Transfer to Low-Resource Languages with Big Brother's Help -- A Benchmark and Evaluation for Turkic Languages"}
 {"paper_id": "237", "channel_name": "paper-237", "paper_title": "Understanding and Mitigating Spurious Correlations in Text Classification with Neighborhood Analysis"}
 {"paper_id": "24", "channel_name": "paper-24", "paper_title": "Parameter-Efficient Conversational Recommender System as a Language Processing Task"}
-{"paper_id": "24-SRW", "channel_name": "paper-24-SRW", "paper_title": "Arabic Synonym BERT-based Adversarial Examples for Text Classification"}
 {"paper_id": "240-Oral", "channel_name": "paper-240-Oral", "paper_title": "Chaining Event Spans for Temporal Relation Grounding"}
 {"paper_id": "242-Oral", "channel_name": "paper-242-Oral", "paper_title": "Robust Neural Machine Translation for Abugidas by Glyph Perturbation"}
 {"paper_id": "243", "channel_name": "paper-243", "paper_title": "IndiVec: An Exploration of Leveraging Large Language Models for Media Bias Detection with Fine-Grained Bias Indicators"}
@@ -139,7 +133,6 @@
 {"paper_id": "247-Oral", "channel_name": "paper-247-Oral", "paper_title": "AnaDE1.0: A Novel Data Set for Benchmarking Analogy Detection and Extraction"}
 {"paper_id": "249", "channel_name": "paper-249", "paper_title": "Computational Morphology and Lexicography Modeling of Modern Standard Arabic Nominals"}
 {"paper_id": "25-Oral", "channel_name": "paper-25-Oral", "paper_title": "OpenPI2.0: An Improved Dataset for Entity Tracking in Texts"}
-{"paper_id": "25-SRW", "channel_name": "paper-25-SRW", "paper_title": "A Hypothesis-Driven Framework for the Analysis of Self-Rationalising Models"}
 {"paper_id": "251", "channel_name": "paper-251", "paper_title": "Relabeling Minimal Training Subset to Flip a Prediction"}
 {"paper_id": "252-Oral", "channel_name": "paper-252-Oral", "paper_title": "A Comprehensive Survey of Sentence Representations: From the BERT Epoch to the CHATGPT Era and Beyond"}
 {"paper_id": "253", "channel_name": "paper-253", "paper_title": "Learning to Retrieve In-Context Examples for Large Language Models"}
@@ -159,7 +152,6 @@
 {"paper_id": "267", "channel_name": "paper-267", "paper_title": "Rainbow - A Benchmark for Systematic Testing of How Sensitive Visio-Linguistic Models are to Color Naming"}
 {"paper_id": "269-Oral", "channel_name": "paper-269-Oral", "paper_title": "CATfOOD: Counterfactual Augmented Training for Improving Out-of-Domain Performance and Calibration"}
 {"paper_id": "27-Oral", "channel_name": "paper-27-Oral", "paper_title": "Multi-Level Attention Aggregation for Language-Agnostic Speaker Replication"}
-{"paper_id": "27-SRW", "channel_name": "paper-27-SRW", "paper_title": "Exploring Large Language Models' Understanding of Shitsukan"}
 {"paper_id": "270", "channel_name": "paper-270", "paper_title": "MAPLE: Micro Analysis of Pairwise Language Evolution for Few-Shot Claim Verification"}
 {"paper_id": "271", "channel_name": "paper-271", "paper_title": "Leveraging Open Information Extraction for More Robust Domain Transfer of Event Trigger Detection"}
 {"paper_id": "273", "channel_name": "paper-273", "paper_title": "UP5: Unbiased Foundation Model for Fairness-aware Recommendation"}
@@ -168,7 +160,6 @@
 {"paper_id": "278", "channel_name": "paper-278", "paper_title": "Human Temporal Inferences Go Beyond Aspectual Class"}
 {"paper_id": "279", "channel_name": "paper-279", "paper_title": "Clarifying the Path to User Satisfaction: An Investigation into Clarification Usefulness"}
 {"paper_id": "28-Oral", "channel_name": "paper-28-Oral", "paper_title": "Few-Shot Data Synthesis for Open Domain Multi-Hop Question Answering"}
-{"paper_id": "28-SRW", "channel_name": "paper-28-SRW", "paper_title": "Align before Attend: Aligning Visual and Textual Features for Multimodal Hateful Content Detection"}
 {"paper_id": "280-Oral", "channel_name": "paper-280-Oral", "paper_title": "It is not True that Transformers are Inductive Learners: Probing NLI Models with External Negation"}
 {"paper_id": "281", "channel_name": "paper-281", "paper_title": "Polarized Opinion Detection Improves the Detection of Toxic Language"}
 {"paper_id": "282-Oral", "channel_name": "paper-282-Oral", "paper_title": "Improving Acoustic Word Embeddings through Correspondence Training of Self-supervised Speech Representations"}
@@ -177,7 +168,6 @@
 {"paper_id": "286", "channel_name": "paper-286", "paper_title": "Investigating Agency of LLMs in Human-AI Collaboration Tasks"}
 {"paper_id": "288", "channel_name": "paper-288", "paper_title": "Goodhart’s Law Applies to NLP’s Explanation Benchmarks"}
 {"paper_id": "289", "channel_name": "paper-289", "paper_title": "Syllable-level lyrics generation from melody exploiting character-level language model"}
-{"paper_id": "29-SRW", "channel_name": "paper-29-SRW", "paper_title": "Topic-guided Example Selection for Domain Adaptation in LLM-based Machine Translation"}
 {"paper_id": "290-Oral", "channel_name": "paper-290-Oral", "paper_title": "SynthDST: Synthetic Data is All You Need for Few-Shot Dialog State Tracking"}
 {"paper_id": "291", "channel_name": "paper-291", "paper_title": "Monolingual or Multilingual Instruction Tuning: Which Makes a Better Alpaca"}
 {"paper_id": "292", "channel_name": "paper-292", "paper_title": "Translation Errors Significantly Impact Low-Resource Languages in Cross-Lingual Learning"}
@@ -186,7 +176,6 @@
 {"paper_id": "296", "channel_name": "paper-296", "paper_title": "Minimal Distillation Schedule for Extreme Language Model Compression"}
 {"paper_id": "299", "channel_name": "paper-299", "paper_title": "Argument Mining as a Text-to-Text Generation Task"}
 {"paper_id": "3", "channel_name": "paper-3", "paper_title": "Multi-Relational Hyperbolic Word Embeddings from Natural Language Definitions"}
-{"paper_id": "3-SRW", "channel_name": "paper-3-SRW", "paper_title": "The KIND Dataset: A Social Collaboration Approach for Nuanced Dialect Data Collection"}
 {"paper_id": "30", "channel_name": "paper-30", "paper_title": "Language Models as Inductive Reasoners"}
 {"paper_id": "301", "channel_name": "paper-301", "paper_title": "Local and Global Contexts for Conversation"}
 {"paper_id": "302", "channel_name": "paper-302", "paper_title": "Answering legal questions from laymen in German civil law system"}
@@ -197,7 +186,6 @@
 {"paper_id": "309", "channel_name": "paper-309", "paper_title": "An Empirical Analysis of Diversity in Argument Summarization"}
 {"paper_id": "309-Oral", "channel_name": "paper-309-Oral", "paper_title": "An Empirical Analysis of Diversity in Argument Summarization"}
 {"paper_id": "31-Oral", "channel_name": "paper-31-Oral", "paper_title": "SIB-200: A Simple, Inclusive, and Big Evaluation Dataset for Topic Classification in 200+ Languages and Dialects"}
-{"paper_id": "31-SRW", "channel_name": "paper-31-SRW", "paper_title": "Reforging : A Method for Constructing a Linguistically Valid Japanese CCG Treebank"}
 {"paper_id": "310-Oral", "channel_name": "paper-310-Oral", "paper_title": "What Makes Medical Claims (Un)Verifiable? Analyzing Entity and Relation Properties for Fact Verification"}
 {"paper_id": "311", "channel_name": "paper-311", "paper_title": "Approximate Attributions for Off-the-Shelf Siamese Transformers"}
 {"paper_id": "312-Oral", "channel_name": "paper-312-Oral", "paper_title": "A Comparative Analysis of Conversational Large Language Models in Knowledge-Based Text Generation"}
@@ -219,7 +207,6 @@
 {"paper_id": "327", "channel_name": "paper-327", "paper_title": "Explaining Speech Classification Models via Word-Level Audio Segments and Paralinguistic Features"}
 {"paper_id": "327-Oral", "channel_name": "paper-327-Oral", "paper_title": "Explaining Speech Classification Models via Word-Level Audio Segments and Paralinguistic Features"}
 {"paper_id": "33-Oral", "channel_name": "paper-33-Oral", "paper_title": "Mitigating Hallucinations and Off-target Machine Translation with Source-Contrastive and Language-Contrastive Decoding"}
-{"paper_id": "33-SRW", "channel_name": "paper-33-SRW", "paper_title": "Thesis Proposal: {D}etecting Agency Attribution"}
 {"paper_id": "331", "channel_name": "paper-331", "paper_title": "Zero-Shot End-to-End Spoken Language Understanding via Cross-Modal Selective Self-Training"}
 {"paper_id": "332", "channel_name": "paper-332", "paper_title": "Antonym vs Synonym Distinction using InterlaCed Encoder NETworks (ICE-NET)"}
 {"paper_id": "333", "channel_name": "paper-333", "paper_title": "Flow Matching for Conditional Text Generation in a Few Sampling Steps"}
@@ -247,13 +234,11 @@
 {"paper_id": "358", "channel_name": "paper-358", "paper_title": "Exploiting Class Probabilities for Black-box Sentence-level Attacks"}
 {"paper_id": "359", "channel_name": "paper-359", "paper_title": "Ask, Assess, and Refine: Rectifying Factual Consistency and Hallucination in LLMs with Metric-Guided Feedback Learning"}
 {"paper_id": "36", "channel_name": "paper-36", "paper_title": "Zero-shot Sentiment Analysis in Low-Resource Languages Using a Multilingual Sentiment Lexicon"}
-{"paper_id": "36-SRW", "channel_name": "paper-36-SRW", "paper_title": "Social Media Portrayals of Happy Moments Among Depressed Individuals"}
 {"paper_id": "360", "channel_name": "paper-360", "paper_title": "Learning Label Hierarchy with Supervised Contrastive Learning"}
 {"paper_id": "362-Oral", "channel_name": "paper-362-Oral", "paper_title": "STORiCo: Storytelling TTS for Hindi with Character Voice Modulation"}
 {"paper_id": "364-Oral", "channel_name": "paper-364-Oral", "paper_title": "Rethinking Loss Functions for Fact Verification"}
 {"paper_id": "369", "channel_name": "paper-369", "paper_title": "A Dataset for Metaphor Detection in Early Medieval Hebrew Poetry"}
 {"paper_id": "37", "channel_name": "paper-37", "paper_title": "CEAN: Contrastive Event Aggregation Network with LLM-based Augmentation for Event Extraction"}
-{"paper_id": "37-SRW", "channel_name": "paper-37-SRW", "paper_title": "A Thesis Proposal ClaimInspector Framework: A Hybrid Approach to Data Annotation using Fact-Checked Claims and LLMs"}
 {"paper_id": "371", "channel_name": "paper-371", "paper_title": "On Measuring Context Utilization in Document-Level MT Systems"}
 {"paper_id": "373", "channel_name": "paper-373", "paper_title": "Effective Controllable Bias Mitigation for Classification and Retrieval using Gate Adapters"}
 {"paper_id": "374", "channel_name": "paper-374", "paper_title": "STable: Table Generation Framework for Encoder-Decoder Models"}
@@ -273,17 +258,14 @@
 {"paper_id": "393", "channel_name": "paper-393", "paper_title": "Should I try multiple optimizers when fine-tuning a pre-trained Transformer for NLP tasks? Should I tune their hyperparameters?"}
 {"paper_id": "399", "channel_name": "paper-399", "paper_title": "GUMsley: Evaluating Entity Salience in Summarization for 12 English Genres"}
 {"paper_id": "4", "channel_name": "paper-4", "paper_title": "Anisotropy Is Inherent to Self-Attention in Transformers"}
-{"paper_id": "4-SRW", "channel_name": "paper-4-SRW", "paper_title": "Can Stanza be Used for Part-of-Speech Tagging Historical Polish?"}
 {"paper_id": "40", "channel_name": "paper-40", "paper_title": "How Transferable are Attribute Controllers on Pretrained Multilingual Translation Models?"}
 {"paper_id": "40-Oral", "channel_name": "paper-40-Oral", "paper_title": "How Transferable are Attribute Controllers on Pretrained Multilingual Translation Models?"}
-{"paper_id": "40-SRW", "channel_name": "paper-40-SRW", "paper_title": "Large Language Models for Mathematical Reasoning: Progresses and Challenges"}
 {"paper_id": "400-Oral", "channel_name": "paper-400-Oral", "paper_title": "Sensitivity, Performance, Robustness: Deconstructing the Effect of Sociodemographic Prompting"}
 {"paper_id": "401", "channel_name": "paper-401", "paper_title": "Parameter-Efficient Fine-Tuning: Is There An Optimal Subset of Parameters to Tune?"}
 {"paper_id": "402", "channel_name": "paper-402", "paper_title": "Threat Behavior Textual Search by Attention Graph Isomorphism"}
 {"paper_id": "404-Oral", "channel_name": "paper-404-Oral", "paper_title": "Identifying Narrative Content in Podcast Transcripts"}
 {"paper_id": "405-Oral", "channel_name": "paper-405-Oral", "paper_title": "Frequency Explains the Inverse Correlation of Large Language Models' Size, Training Data Amount, and Surprisal's Fit to Reading Times"}
 {"paper_id": "41", "channel_name": "paper-41", "paper_title": "A Methodology for Generative Spelling Correction via Natural Spelling Errors Emulation across Multiple Domains and Languages"}
-{"paper_id": "41-SRW", "channel_name": "paper-41-SRW", "paper_title": "Representation and Generation of Machine Learning Test Functions"}
 {"paper_id": "411-Oral", "channel_name": "paper-411-Oral", "paper_title": "Presentations by the Humans and For the Humans: Harnessing LLMs for Generating Persona-Aware Slides from Documents"}
 {"paper_id": "412", "channel_name": "paper-412", "paper_title": "CODET: A Benchmark for Contrastive Dialectal Evaluation of Machine Translation"}
 {"paper_id": "413", "channel_name": "paper-413", "paper_title": "ToPro: Token-Level Prompt Decomposition for Cross-Lingual Sequence Labeling Tasks"}
@@ -322,7 +304,6 @@
 {"paper_id": "456", "channel_name": "paper-456", "paper_title": "AccentFold: A Journey through African Accents for Zero-Shot ASR Adaptation to Target Accents"}
 {"paper_id": "458", "channel_name": "paper-458", "paper_title": "Gradient-Based Language Model Red Teaming"}
 {"paper_id": "458-Oral", "channel_name": "paper-458-Oral", "paper_title": "Gradient-Based Language Model Red Teaming"}
-{"paper_id": "46-SRW", "channel_name": "paper-46-SRW", "paper_title": "The Generative AI Paradox in Evaluation: \"What It Can Solve, It May Not Evaluate\""}
 {"paper_id": "460", "channel_name": "paper-460", "paper_title": "Generative Interpretation: Toward Human-Like Evaluation for Educational Question-Answer Pair Generation"}
 {"paper_id": "461", "channel_name": "paper-461", "paper_title": "Dive into the Chasm: Probing the Gap between In- and Cross-Topic Generalization"}
 {"paper_id": "462-Oral", "channel_name": "paper-462-Oral", "paper_title": "Do Moral Judgment and Reasoning Capability of LLMs Change with Language? A Study using the Multilingual Defining Issues Test"}
@@ -333,7 +314,6 @@
 {"paper_id": "468-Oral", "channel_name": "paper-468-Oral", "paper_title": "Analyzing the Evaluation of Cross-Lingual Knowledge Transfer in Multilingual Language Models"}
 {"paper_id": "469", "channel_name": "paper-469", "paper_title": "Joint Inference of Retrieval and Generation for Passage Re-ranking"}
 {"paper_id": "47-Oral", "channel_name": "paper-47-Oral", "paper_title": "UNSEE: Unsupervised Non-contrastive Sentence Embeddings"}
-{"paper_id": "47-SRW", "channel_name": "paper-47-SRW", "paper_title": "Generative Data Augmentation using LLMs improves Distributional Robustness in Question Answering"}
 {"paper_id": "470-Oral", "channel_name": "paper-470-Oral", "paper_title": "Large-Scale Label Interpretation Learning for Few-Shot Named Entity Recognition"}
 {"paper_id": "472", "channel_name": "paper-472", "paper_title": "Exploring hybrid approaches to readability: experiments on the complementarity between linguistic features and transformers"}
 {"paper_id": "473-Oral", "channel_name": "paper-473-Oral", "paper_title": "MLCopilot: Unleashing the Power of Large Language Models in Solving Machine Learning Tasks"}
@@ -341,32 +321,22 @@
 {"paper_id": "475", "channel_name": "paper-475", "paper_title": "The Queen of England is not England’s Queen: On the Lack of Factual Coherency in PLMs"}
 {"paper_id": "476-Oral", "channel_name": "paper-476-Oral", "paper_title": "Text-Guided Image Clustering"}
 {"paper_id": "48", "channel_name": "paper-48", "paper_title": "EXPLORER: Exploration-guided Reasoning for Textual Reinforcement Learning"}
-{"paper_id": "48-SRW", "channel_name": "paper-48-SRW", "paper_title": "Japanese-English Sentence Translation Exercises Dataset for Automatic Grading"}
 {"paper_id": "480", "channel_name": "paper-480", "paper_title": "Understanding the effects of language-specific class imbalance in multilingual fine-tuning"}
 {"paper_id": "481", "channel_name": "paper-481", "paper_title": "CCPrefix: Counterfactual Contrastive Prefix-Tuning for Many-Class Classification"}
 {"paper_id": "49-Oral", "channel_name": "paper-49-Oral", "paper_title": "From Text Segmentation to Smart Chaptering: A Novel Benchmark for Structuring Video Transcriptions"}
-{"paper_id": "49-SRW", "channel_name": "paper-49-SRW", "paper_title": "The Impact of Integration Step on Integrated Gradients"}
 {"paper_id": "5", "channel_name": "paper-5", "paper_title": "French GossipPrompts: Dataset For Prevention of Generating French Gossip Stories By LLMs"}
 {"paper_id": "50", "channel_name": "paper-50", "paper_title": "réchet Distance for Offline Evaluation of Information Retrieval Systems with Sparse Labels"}
 {"paper_id": "50-Oral", "channel_name": "paper-50-Oral", "paper_title": "Fréchet Distance for Offline Evaluation of Information Retrieval Systems with Sparse Labels"}
 {"paper_id": "51-Oral", "channel_name": "paper-51-Oral", "paper_title": "Semantic Sensitivities and Inconsistent Predictions: Measuring the Fragility of NLI Models"}
-{"paper_id": "51-SRW", "channel_name": "paper-51-SRW", "paper_title": "GesNavi: Gesture-guided Outdoor Vision-and-Language Navigation"}
 {"paper_id": "52", "channel_name": "paper-52", "paper_title": "Exploring the Robustness of Task-oriented Dialogue Systems for Colloquial German Varieties"}
-{"paper_id": "52-SRW", "channel_name": "paper-52-SRW", "paper_title": "Can docstring reformulation with an LLM improve code generation?"}
 {"paper_id": "53", "channel_name": "paper-53", "paper_title": "Evaluating the Factuality of Zero-shot Summarizers Across Varied Domains"}
-{"paper_id": "53-SRW", "channel_name": "paper-53-SRW", "paper_title": "Benchmarking Diffusion Models for Machine Translation"}
 {"paper_id": "54", "channel_name": "paper-54", "paper_title": "PEARL: Prompting Large Language Models to Plan and Execute Actions Over Long Documents"}
-{"paper_id": "54-SRW", "channel_name": "paper-54-SRW", "paper_title": "Forged-GAN-BERT: Authorship Attribution for LLM-Generated Forged Novels"}
-{"paper_id": "55-SRW", "channel_name": "paper-55-SRW", "paper_title": "Thesis Proposal: Detecting Empathy Using Multimodal Language Model"}
 {"paper_id": "56-Oral", "channel_name": "paper-56-Oral", "paper_title": "Leveraging Implicit Feedback from Deployment Data in Dialogue"}
 {"paper_id": "57-Oral", "channel_name": "paper-57-Oral", "paper_title": "Characterizing the Confidence of Large Language Model-Based Automatic Evaluation Metrics"}
 {"paper_id": "58", "channel_name": "paper-58", "paper_title": "Large Language Models for Psycholinguistic Plausibility Pretesting"}
 {"paper_id": "59", "channel_name": "paper-59", "paper_title": "Modeling Aspect Sentiment Coherency via Local Sentiment Aggregation"}
 {"paper_id": "60", "channel_name": "paper-60", "paper_title": "An Examination of the Robustness of Reference-Free Image Captioning Evaluation Metrics"}
-{"paper_id": "60-SRW", "channel_name": "paper-60-SRW", "paper_title": "Toward Sentiment Aware Semantic Change Analysis"}
 {"paper_id": "61", "channel_name": "paper-61", "paper_title": "Barriers to Effective Evaluation of Simultaneous Interpretation"}
-{"paper_id": "61-SRW", "channel_name": "paper-61-SRW", "paper_title": "On Sociodemographics Variables and Sociodemographic Prompting"}
-{"paper_id": "62-SRW", "channel_name": "paper-62-SRW", "paper_title": "Dynamic Task-Oriented Dialogue: A Comparative Study of Llama-2 and Bert in Slot Value Generation"}
 {"paper_id": "65", "channel_name": "paper-65", "paper_title": "LAraBench: Benchmarking Arabic AI with Large Language Models"}
 {"paper_id": "66-Oral", "channel_name": "paper-66-Oral", "paper_title": "SentenceLDA: Discriminative and Robust Document Representation with Sentence Level Topic Model"}
 {"paper_id": "67", "channel_name": "paper-67", "paper_title": "Equipping Language Models with Tool Use Capability for Tabular Data Analysis in Finance"}
@@ -378,7 +348,6 @@
 {"paper_id": "74-Oral", "channel_name": "paper-74-Oral", "paper_title": "Commonsense-augmented Memory Construction and Management in Long-term Conversations via Context-aware Persona Refinement"}
 {"paper_id": "77", "channel_name": "paper-77", "paper_title": "Investigating the Potential of Task Arithmetic for Cross-Lingual Transfer"}
 {"paper_id": "79", "channel_name": "paper-79", "paper_title": "PRILoRA: Pruned and Rank-Increasing Low-Rank Adaptation"}
-{"paper_id": "8-SRW", "channel_name": "paper-8-SRW", "paper_title": "Toward Zero-Shot Instruction Following"}
 {"paper_id": "80", "channel_name": "paper-80", "paper_title": "NNOSE: Nearest Neighbor Occupational Skill Extraction"}
 {"paper_id": "80-Oral", "channel_name": "paper-80-Oral", "paper_title": "NNOSE: Nearest Neighbor Occupational Skill Extraction"}
 {"paper_id": "82-Oral", "channel_name": "paper-82-Oral", "paper_title": "On the Benefits of Fine-Grained Loss Truncation: A Case Study on Factuality in Summarization"}
@@ -390,7 +359,6 @@
 {"paper_id": "88", "channel_name": "paper-88", "paper_title": "Over-Reasoning and Redundant Calculation of Large Language Models"}
 {"paper_id": "88-Oral", "channel_name": "paper-88-Oral", "paper_title": "Over-Reasoning and Redundant Calculation of Large Language Models"}
 {"paper_id": "9", "channel_name": "paper-9", "paper_title": "GPTs Are Multilingual Annotators for Sequence Generation Tasks"}
-{"paper_id": "9-SRW", "channel_name": "paper-9-SRW", "paper_title": "UnMASKed: Quantifying Gender Biases in Masked Language Models through Linguistically Informed Job Market Prompts"}
 {"paper_id": "93", "channel_name": "paper-93", "paper_title": "A Comprehensive Evaluation of Inductive Reasoning Capabilities and Problem Solving in Large Language Models"}
 {"paper_id": "94-Oral", "channel_name": "paper-94-Oral", "paper_title": "Code-Switched Language Identification is Harder Than You Think"}
 {"paper_id": "95", "channel_name": "paper-95", "paper_title": "Generation-driven Contrastive Self-training for Zero-shot Text Classification with Instruction-following LLM"}
@@ -423,5 +391,37 @@
 {"paper_id": "DEMO-9", "channel_name": "paper-DEMO-9", "paper_title": "DepressMind: A Depression Surveillance System for Social Media Analysis"}
 {"paper_id": "Journal-paper-CL1-Oral", "channel_name": "paper-Journal-paper-CL1-Oral", "paper_title": "Generation and Polynomial Parsing of Graph Languages with Non-Structural Reentrancies"}
 {"paper_id": "Journal-paper-TACL1-Oral", "channel_name": "paper-Journal-paper-TACL1-Oral", "paper_title": "Text-to-OverpassQL: A Natural Language Interface for Complex Geodata Querying of OpenStreetMap"}
+{"paper_id": "SRW-1", "channel_name": "paper-SRW-1", "paper_title": "AutoAugment Is What You Need: Enhancing Rule-based Augmentation Methods in Low-resource Regimes"}
+{"paper_id": "SRW-10", "channel_name": "paper-SRW-10", "paper_title": "Distribution Shifts Are Bottlenecks: Extensive Evaluation for Grounding Language Models to Knowledge Bases"}
+{"paper_id": "SRW-15", "channel_name": "paper-SRW-15", "paper_title": "AttriSage: Product Attribute Value Extraction Using Graph Neural Networks"}
+{"paper_id": "SRW-17", "channel_name": "paper-SRW-17", "paper_title": "HypoTermQA: Hypothetical Terms Dataset for Benchmarking Hallucination Tendency of LLMs"}
+{"paper_id": "SRW-2", "channel_name": "paper-SRW-2", "paper_title": "Generating Diverse Translation with Perturbed $k$nn-MT"}
+{"paper_id": "SRW-24", "channel_name": "paper-SRW-24", "paper_title": "Arabic Synonym BERT-based Adversarial Examples for Text Classification"}
+{"paper_id": "SRW-25", "channel_name": "paper-SRW-25", "paper_title": "A Hypothesis-Driven Framework for the Analysis of Self-Rationalising Models"}
+{"paper_id": "SRW-27", "channel_name": "paper-SRW-27", "paper_title": "Exploring Large Language Models' Understanding of Shitsukan"}
+{"paper_id": "SRW-28", "channel_name": "paper-SRW-28", "paper_title": "Align before Attend: Aligning Visual and Textual Features for Multimodal Hateful Content Detection"}
+{"paper_id": "SRW-29", "channel_name": "paper-SRW-29", "paper_title": "Topic-guided Example Selection for Domain Adaptation in LLM-based Machine Translation"}
+{"paper_id": "SRW-3", "channel_name": "paper-SRW-3", "paper_title": "The KIND Dataset: A Social Collaboration Approach for Nuanced Dialect Data Collection"}
+{"paper_id": "SRW-31", "channel_name": "paper-SRW-31", "paper_title": "Reforging : A Method for Constructing a Linguistically Valid Japanese CCG Treebank"}
+{"paper_id": "SRW-33", "channel_name": "paper-SRW-33", "paper_title": "Thesis Proposal: {D}etecting Agency Attribution"}
+{"paper_id": "SRW-36", "channel_name": "paper-SRW-36", "paper_title": "Social Media Portrayals of Happy Moments Among Depressed Individuals"}
+{"paper_id": "SRW-37", "channel_name": "paper-SRW-37", "paper_title": "A Thesis Proposal ClaimInspector Framework: A Hybrid Approach to Data Annotation using Fact-Checked Claims and LLMs"}
+{"paper_id": "SRW-4", "channel_name": "paper-SRW-4", "paper_title": "Can Stanza be Used for Part-of-Speech Tagging Historical Polish?"}
+{"paper_id": "SRW-40", "channel_name": "paper-SRW-40", "paper_title": "Large Language Models for Mathematical Reasoning: Progresses and Challenges"}
+{"paper_id": "SRW-41", "channel_name": "paper-SRW-41", "paper_title": "Representation and Generation of Machine Learning Test Functions"}
+{"paper_id": "SRW-46", "channel_name": "paper-SRW-46", "paper_title": "The Generative AI Paradox in Evaluation: \"What It Can Solve, It May Not Evaluate\""}
+{"paper_id": "SRW-47", "channel_name": "paper-SRW-47", "paper_title": "Generative Data Augmentation using LLMs improves Distributional Robustness in Question Answering"}
+{"paper_id": "SRW-48", "channel_name": "paper-SRW-48", "paper_title": "Japanese-English Sentence Translation Exercises Dataset for Automatic Grading"}
+{"paper_id": "SRW-49", "channel_name": "paper-SRW-49", "paper_title": "The Impact of Integration Step on Integrated Gradients"}
+{"paper_id": "SRW-51", "channel_name": "paper-SRW-51", "paper_title": "GesNavi: Gesture-guided Outdoor Vision-and-Language Navigation"}
+{"paper_id": "SRW-52", "channel_name": "paper-SRW-52", "paper_title": "Can docstring reformulation with an LLM improve code generation?"}
+{"paper_id": "SRW-53", "channel_name": "paper-SRW-53", "paper_title": "Benchmarking Diffusion Models for Machine Translation"}
+{"paper_id": "SRW-54", "channel_name": "paper-SRW-54", "paper_title": "Forged-GAN-BERT: Authorship Attribution for LLM-Generated Forged Novels"}
+{"paper_id": "SRW-55", "channel_name": "paper-SRW-55", "paper_title": "Thesis Proposal: Detecting Empathy Using Multimodal Language Model"}
+{"paper_id": "SRW-60", "channel_name": "paper-SRW-60", "paper_title": "Toward Sentiment Aware Semantic Change Analysis"}
+{"paper_id": "SRW-61", "channel_name": "paper-SRW-61", "paper_title": "On Sociodemographics Variables and Sociodemographic Prompting"}
+{"paper_id": "SRW-62", "channel_name": "paper-SRW-62", "paper_title": "Dynamic Task-Oriented Dialogue: A Comparative Study of Llama-2 and Bert in Slot Value Generation"}
+{"paper_id": "SRW-8", "channel_name": "paper-SRW-8", "paper_title": "Toward Zero-Shot Instruction Following"}
+{"paper_id": "SRW-9", "channel_name": "paper-SRW-9", "paper_title": "UnMASKed: Quantifying Gender Biases in Masked Language Models through Linguistically Informed Job Market Prompts"}
 {"paper_id": "TACL2", "channel_name": "paper-TACL2", "paper_title": "Do Text Simplification Systems Convey Correct Information? A Human Evaluation via Reading Comprehension"}
 {"paper_id": "TACL3", "channel_name": "paper-TACL3", "paper_title": "Are Character-level Translations Worth the Wait? Comparing Pretrained Character- and Subword-level Models for Machine Translation"}

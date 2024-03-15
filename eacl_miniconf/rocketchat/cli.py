@@ -302,7 +302,8 @@ def hydra_main(cfg: DictConfig):
 
             ## 1. delete paper channel
             for channel in channel_names:
-                if "paper-" in channel.lower():
+                # if "paper-" in channel.lower():
+                if "-srw" in channel.lower():
                     helper.delete_channel(channel=channel)
 
             ## 2. delete tutorial channel
