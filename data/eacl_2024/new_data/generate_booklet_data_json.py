@@ -14,8 +14,8 @@ for index, row in df1.iterrows():
     # print(type(row['Date']), type(row['Start Time']), "+++")
     # start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'].strftime('%H:%M:%S')
     # end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'].strftime('%H:%M:%S')
-    start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time']
-    end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time']
+    start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'] # + "+01:00"
+    end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'] # + "+01:00"
     # 处理每一行的数据，并添加到字典列表中
     plenary_data = {
         'id': row['id'],
@@ -35,8 +35,8 @@ for index, row in df1.iterrows():
 for index, row in df2.iterrows():
     # start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'].strftime('%H:%M:%S')
     # end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'].strftime('%H:%M:%S')
-    start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time']
-    end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time']
+    start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'] # + "+01:00"
+    end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'] # + "+01:00"
     # 处理每一行的数据，并添加到字典列表中
     tutorial_data = {
         'id':row['Id'],
@@ -54,8 +54,8 @@ for index, row in df2.iterrows():
 for index, row in df3.iterrows():
     # start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'].strftime('%H:%M:%S')
     # end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'].strftime('%H:%M:%S')
-    start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time']
-    end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time']
+    start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'] # + "+01:00"
+    end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'] # + "+01:00"
     # 处理每一行的数据，并添加到字典列表中
     workshop_data = {
         'id':row['Id'],

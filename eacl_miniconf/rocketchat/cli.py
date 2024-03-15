@@ -174,9 +174,9 @@ class EaclRcHelper:
                 else:
                     author_string = ", ".join(paper.authors)
                     topic = f"{paper.title} - {author_string}"
-                    self.create_channel(channel_name, topic, paper.abstract)
+                    # self.create_channel(channel_name, topic, paper.abstract)
                     created += 1
-        # write_into_json(datas, "paper_channels.json")
+        write_into_json(datas, "paper_channels.json")
         print(
             f"Total papers: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
         )

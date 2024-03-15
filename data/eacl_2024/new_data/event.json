@@ -8,17 +8,7 @@
       "start_time": "2024-03-17 18:00:00",
       "end_time": "2024-03-17 20:30:00",
       "desc": "",
-      "location": ""
-    },
-    {
-      "title": "Social Event Doors Open",
-      "id": "social-event-doors-open",
-      "day": "Tuesday, March 19, 2024",
-      "venue": "",
-      "start_time": "2024-03-19 16:30:00",
-      "end_time": "2024-03-19 17:00:00",
-      "desc": "",
-      "location": ""
+      "location": "Radisson Blu"
     },
     {
       "title": "Social Event Dinner & Entertainment",
@@ -26,9 +16,9 @@
       "day": "Tuesday, March 19, 2024",
       "venue": "",
       "start_time": "2024-03-19 17:00:00",
-      "end_time": "2024-03-19 20:00:00",
-      "desc": "",
-      "location": ""
+      "end_time": "2024-03-19 22:00:00",
+      "desc": "Dinner & Entertainment",
+      "location": "Corinthia Hotel Rooms"
     }
   ]
 }

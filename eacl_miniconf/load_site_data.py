@@ -130,6 +130,8 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
             elif event.type.lower() == "oral":
                 url = f"/sessions.html#link-{tab_id}-{event.id}"
                 day_view_name = "Oral: {}".format(event.track)
+                # print(start, end, "+++")
+                # print(day_view_name, event.start_time, event.end_time)
             elif event.type.lower() == "socials":
                 url = "/socials.html"
                 if "Birds of a Feather" in event.track:
@@ -151,8 +153,8 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 room = ", Room: {}".format(event.room)
             frontend_event = FrontendCalendarEvent(
                 title=day_view_name,
-                start=start,
-                end=end,
+                start=event.start_time,
+                end=event.end_time,
                 location=room,
                 # url=f"papers.html?session={session.id}&program=all",
                 url=url,
@@ -183,9 +185,11 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 room = ""
             else:
                 room = ", Room: {}".format(event.room)
+            # print(event)
+            event_name = "{}: {}".format(event.id, session.name)
             frontend_event = FrontendCalendarEvent(
                 # title=f"<b>{event.track}</b>",
-                title=session.name,
+                title=event_name,
                 start=start,
                 end=end,
                 location=room,
@@ -195,7 +199,7 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 type=session.type,
                 view="day",
             )
-            event_key = "{}+{}+{}+{}".format(session.name, event.track, event.start_time, room)
+            event_key = "{}+{}+{}+{}".format(event_name, event.track, event.start_time, room)
             if existing_events[event_key] == 0:
                 existing_events[event_key] += 1
                 overall_calendar.append(frontend_event)
@@ -231,9 +235,11 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 room = ""
             else:
                 room = ", Room: {}".format(event.room)
+            work_shop_id = "W" + event.booklet_id.split("-")[1].strip()
+            event_name = "{}: {}".format(work_shop_id, session.name)
             frontend_event = FrontendCalendarEvent(
                 # title=f"<b>{event.track}</b>",
-                title=session.name,
+                title=event_name,
                 start=start,
                 end=end,
                 location=room,
@@ -244,7 +250,8 @@ def generate_paper_events_v1(site_data: SiteData) -> List[Dict[str, Any]]:
                 type=session.type,
                 view="day",
             )
-            event_key = "{}+{}+{}+{}".format(session.name, event.track, event.start_time, room)
+            # print(session.name, event.track, event.start_time, room)
+            event_key = "{}+{}+{}+{}".format(event_name, event.track, event.start_time, room)
             if existing_events[event_key] == 0:
                 existing_events[event_key] += 1
                 overall_calendar.append(frontend_event)

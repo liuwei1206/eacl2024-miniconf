@@ -3,10 +3,10 @@
         {
             "id": "opening-session",
             "title": "Opening Session and Presidential Address",
-            "desc": "March 18 - Time: 08:00 - 08:30",
+            "desc": "March 18 - Time: 09:00 - 09:30",
             "location": "Radisson",
-            "start_time": "2024-03-18T08:00:00",
-            "end_time": "2024-03-18T08:30:00",
+            "start_time": "2024-03-18T09:00:00",
+            "end_time": "2024-03-18T09:30:00",
             "bio": "TBD",
             "speaker_name": "EACL 2024 General Chair",
             "institution": "EACL 2024",
@@ -15,10 +15,10 @@
         {
             "id": "keynote-01",
             "title": "Human vs. Generative AI in Content Creation Competition: Symbiosis or Conflict?",
-            "desc": "March 18 - Time: 08:30 - 09:30",
+            "desc": "March 18 - Time: 09:30 - 10:30",
             "location": "Radisson",
-            "start_time": "2024-03-18T08:30:00",
-            "end_time": "2024-03-18T09:30:00",
+            "start_time": "2024-03-18T09:30:00",
+            "end_time": "2024-03-18T10:30:00",
             "bio": "Dr. Hongning Wang is now an associate professor at the Department of Computer Science and Technology at Tsinghua University. Prior to that, he was the Copenhaver Associate Professor in the Department of Computer Science at the University of Virginia. He received his PhD degree in computer science at the University of Illinois at Champaign-Urbana in 2014. His research generally lies in the intersection among machine learning and information retrieval, with a special focus on sequential decision optimization and computational user modeling. His work has generated over 100 research papers in top venues in data mining and information retrieval areas. He is a recipient of 2016 National Science Foundation CAREER Award, 2020 Google Faculty Research Award, and SIGIR\u20192019 Best Paper Award.",
             "speaker_name": "Hongning Wang",
             "institution": "Tsinghua University",
@@ -27,10 +27,10 @@
         {
             "id": "keynote-02",
             "title": "Quality Data for LLMs: Challenges and Opportunities for NLP",
-            "desc": "March 19 - Time: 08:00 - 09:00",
+            "desc": "March 19 - Time: 09:00 - 10:00",
             "location": "Radisson",
-            "start_time": "2024-03-19T08:00:00",
-            "end_time": "2024-03-19T09:00:00",
+            "start_time": "2024-03-19T09:00:00",
+            "end_time": "2024-03-19T10:00:00",
             "bio": "Hinrich Schuetze is Professor at the Center for Information and Language Processing at LMU Munich. His lab is engaged in research on multilinguality, representation learning and linguistic analysis of NLP models. His research has been funded by NSF, the German National Science Foundation and the European Research Council (ERC Advanced Grant), inter alia. Hinrich is coauthor of two well-known textbooks (Foundations of Statistical Natural Language Processing and Introduction to Information Retrieval), a fellow of HessianAI, ELLIS (the European Laboratory for Learning and Intelligent Systems) and ACL (Association for Computational Linguistics) and (co-)awardee of several best paper awards and the ACL 2023 25-year test of time award.",
             "speaker_name": "Hinrich Sch\u00fctze",
             "institution": "Ludwig Maximilian University of Munich",
@@ -39,10 +39,10 @@
         {
             "id": "business-meeting",
             "title": "Business Meeting",
-            "desc": "March 19 - Time: 12:00 - 12:45",
+            "desc": "March 19 - Time: 13:00 - 13:45",
             "location": "Radisson",
-            "start_time": "2024-03-19T12:00:00",
-            "end_time": "2024-03-19T12:45:00",
+            "start_time": "2024-03-19T13:00:00",
+            "end_time": "2024-03-19T13:45:00",
             "bio": "TBD",
             "speaker_name": "EACL 2024 Board",
             "institution": "EACL 2024",
@@ -51,10 +51,10 @@
         {
             "id": "keynote-03",
             "title": "Prompting is not all you need! Or why Structure and Representations still matter in NLP",
-            "desc": "March 20 - Time: 13:45 - 14:45",
+            "desc": "March 20 - Time: 14:45 - 15:45",
             "location": "Radisson",
-            "start_time": "2024-03-20T13:45:00",
-            "end_time": "2024-03-20T14:45:00",
+            "start_time": "2024-03-20T14:45:00",
+            "end_time": "2024-03-20T15:45:00",
             "bio": "Mirella Lapata is professor of natural language processing in the School of Informatics at the University of Edinburgh. Her research focuses on getting computers to understand, reason with, and generate natural language. She is the first recipient (2009) of the British Computer Society and Information Retrieval Specialist Group (BCS/IRSG) Karen Sparck Jones award and a Fellow of the Royal Society of Edinburgh, the ACL, and Academia Europaea. Mirella has also received best paper awards in leading NLP conferences and has served on the editorial boards of the Journal of Artificial Intelligence Research, the Transactions of the ACL, and Computational Linguistics. She was president of SIGDAT (the group that organizes EMNLP) in 2018. She has been awarded an ERC consolidator grant, a Royal Society Wolfson Research Merit Award, and a UKRI Turing AI World-Leading Researcher Fellowship.",
             "speaker_name": "Mirella Lapata",
             "institution": "University of Edinburgh",
@@ -63,10 +63,10 @@
         {
             "id": "best-paper",
             "title": "Best Paper Awards",
-            "desc": "March 20 - Time: 15:00 - 15:45",
+            "desc": "March 20 - Time: 16:00 - 16:45",
             "location": "Radisson",
-            "start_time": "2024-03-20T15:00:00",
-            "end_time": "2024-03-20T15:45:00",
+            "start_time": "2024-03-20T16:00:00",
+            "end_time": "2024-03-20T16:45:00",
             "bio": "TBD",
             "speaker_name": "EACL 2024 General Chair",
             "institution": "EACL 2024",
@@ -75,10 +75,10 @@
         {
             "id": "closing-session",
             "title": "Closing Remarks & Upcoming Conference Announcements",
-            "desc": "March 20 - Time: 15:45 - 16:30",
+            "desc": "March 20 - Time: 16:45 - 17:30",
             "location": "Radisson",
-            "start_time": "2024-03-20T15:45:00",
-            "end_time": "2024-03-20T16:30:00",
+            "start_time": "2024-03-20T16:45:00",
+            "end_time": "2024-03-20T17:30:00",
             "bio": "TBD",
             "speaker_name": "EACL 2024 General Chair",
             "institution": "EACL 2024",
@@ -369,17 +369,7 @@
             "start_time": "2024-03-17 18:00:00",
             "end_time": "2024-03-17 20:30:00",
             "desc": "",
-            "location": ""
-        },
-        {
-            "title": "Social Event Doors Open",
-            "id": "social-event-doors-open",
-            "day": "Tuesday, March 19, 2024",
-            "venue": "",
-            "start_time": "2024-03-19 16:30:00",
-            "end_time": "2024-03-19 17:00:00",
-            "desc": "",
-            "location": ""
+            "location": "Radisson Blu"
         },
         {
             "title": "Social Event Dinner & Entertainment",
@@ -387,9 +377,9 @@
             "day": "Tuesday, March 19, 2024",
             "venue": "",
             "start_time": "2024-03-19 17:00:00",
-            "end_time": "2024-03-19 20:00:00",
-            "desc": "",
-            "location": ""
+            "end_time": "2024-03-19 22:00:00",
+            "desc": "Dinner & Entertainment",
+            "location": "Corinthia Hotel Rooms"
         }
     ]
 }
