@@ -90,6 +90,7 @@ def determine_program(category: str):
     elif category == "Findings":
         return FINDINGS
     elif category == "Demo":
+        print(category, "+++")
         return DEMO
     elif category in ["Workshop", "SRW"]:
         return WORKSHOP
@@ -1387,9 +1388,9 @@ def main(
     out_dir.mkdir(exist_ok=True, parents=True)
     conf_dict = conf.dict()
 
-    logging.info("Writing to conference.json")
-    with open(out_dir / "conference.json", "w") as f:
-        json.dump(conf_dict, f, cls=DateTimeEncoder, sort_keys=True, indent=2)
+    # logging.info("Writing to conference.json")
+    # with open(out_dir / "conference.json", "w") as f:
+    #     json.dump(conf_dict, f, cls=DateTimeEncoder, sort_keys=True, indent=2)
 
 
 if __name__ == "__main__":

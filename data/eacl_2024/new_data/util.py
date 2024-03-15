@@ -490,6 +490,7 @@ def convert_poster_csv(data_file):
         else:
             if "demo" in pid.lower():
                 category = "Demo"
+                print(category)
             else:
                 category = "Poster"
             track = row['Track']
