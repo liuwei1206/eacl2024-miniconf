@@ -57,6 +57,7 @@ for index, row in df3.iterrows():
     start_time = row['Date'].strftime('%Y-%m-%dT') + row['Start Time'] # + "+01:00"
     end_time = row['Date'].strftime('%Y-%m-%dT') + row['End Time'] # + "+01:00"
     # 处理每一行的数据，并添加到字典列表中
+    print(row['Title'], start_time, end_time)
     workshop_data = {
         'id':row['Id'],
         'title': row['Title'],

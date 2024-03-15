@@ -369,6 +369,7 @@ class Eacl2023Parser:
         for session in self.booklet.workshop_sessions.values():
             if session.id in self.sessions:
                 raise ValueError("Duplicate workshop session")
+            # print(session.name, session.start_time, session.end_time, "+++")
             self.sessions[session.id] = session
 
     def _parse_workshop_papers(self):
@@ -706,9 +707,9 @@ class Eacl2023Parser:
                 event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
-                    # logging.warning(
-                    #     f"Duplicate papers in virtual: {row.PID}\nExisting: {self.papers[row.PID]}\nNew:{paper}"
-                    # )
+                    logging.warning(
+                        f"Duplicate papers in virtual: {row.PID}\nExisting: {self.papers[row.PID]}\nNew:{paper}"
+                    )
                     paper = self.papers[row.PID]
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
@@ -842,9 +843,9 @@ class Eacl2023Parser:
                 event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
-                    # logging.warning(
-                    #     f"Duplicate papers in posters: {row.PID}\n{self.papers[row.PID]}"
-                    # )
+                    logging.warning(
+                        f"Duplicate papers in posters: {row.PID}\n{self.papers[row.PID]}"
+                    )
                     paper = self.papers[row.PID]
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
@@ -963,17 +964,15 @@ class Eacl2023Parser:
             else:
                 if self.sessions[group_session].end_time < end_dt:
                     self.sessions[group_session].end_time = end_dt
-            if group_session == "Session 2":
-                print(group_session, self.sessions[group_session].start_time, self.sessions[group_session].end_time, )
             session = self.sessions[group_session]
             session.events[event_id] = event
             for row in group.itertuples():
                 paper_id = row.PID
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
-                    # logging.warning(
-                    #     f"Duplicate papers in oral: {row.PID}\n{self.papers[row.PID]}"
-                    # )
+                    logging.warning(
+                        f"Duplicate papers in oral: {row.PID}\n{self.papers[row.PID]}"
+                    )
                     paper = self.papers[row.PID]
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)

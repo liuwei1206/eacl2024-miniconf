@@ -118,6 +118,7 @@ def prepare_workshop_data(data_file):
             continue
 
         day = row[2] # row['Day
+        print(day)
         start_time = row[10] # row['Start time']
         end_time = row[15] # row['End time']
         room = "{}, {}".format(row[3], row[4]) # row['Hotel'] + ", " + row['Ballroom']
@@ -400,14 +401,13 @@ def convert_oral_csv(data_file):
         presentation_order = row['Pres. Order']
         session_title = row['Session Name ']
         session_id_on_underline = ""
-        pid_old = row['Paper ID']
+        pid_old = row['Paper ID'].replace(" ", "-").replace(":", "") + "-Oral"
         pid = pid_old
         title = row['Paper Title']
         author = row['Author']
         length = row['Length']
         category = row['Category']
         oral_pref = row['Presentation Preference']
-        print(row['Category'])
         all_session.append(session.strip())
         all_date.append(date)
         all_start_time.append(start_time)
@@ -477,7 +477,7 @@ def convert_poster_csv(data_file):
         date = row['Date']
         time = row['Time CET (Local Time)']
         start_time, end_time = poster_time(time)
-        pid_old = row['Paper ID']
+        pid_old = row['Paper ID'].replace(" ", "-")
         pid = pid_old
         title = row['Paper Title']
         author = row['Authors']
@@ -487,6 +487,9 @@ def convert_poster_csv(data_file):
         if "SRW" in poster_session:
             category = "SRW"
             track = "Student Research Workshop"
+            # pid += "-SRW"
+            # pid_old = pid
+            print(pid, "++")
         else:
             if "demo" in pid.lower():
                 category = "Demo"
@@ -596,8 +599,8 @@ def generate_plenary_json(data_file):
 
 if __name__ == "__main__":
     data_file = "EACL24-Events.xlsx"
-    # write_to_excel(data_file)
-    # convert_oral_csv("eacl-oral-papers.tsv")
+    write_to_excel(data_file)
+    # convert_oral_csv("old/eacl-oral-papers.tsv")
     # convert_poster_csv("eacl-poster-papers.tsv")
     # generate_plenary_json("inputs.xlsx")
 

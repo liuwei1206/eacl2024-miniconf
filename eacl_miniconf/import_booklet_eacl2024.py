@@ -197,6 +197,8 @@ def generate_workshops(
         end_time = parse_conference_time(
             workshop_dict["start_time"]
         ) + datetime.timedelta(hours=8)
+        end_time = parse_conference_time(workshop_dict["end_time"])
+        # print(start_time, end_time, "+++")
         workshop = Workshop(
             id=workshop_id,
             title=workshop_dict["title"],

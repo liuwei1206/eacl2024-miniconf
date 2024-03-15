@@ -174,7 +174,7 @@ class EaclRcHelper:
                 else:
                     author_string = ", ".join(paper.authors)
                     topic = f"{paper.title} - {author_string}"
-                    # self.create_channel(channel_name, topic, paper.abstract)
+                    self.create_channel(channel_name, topic, paper.abstract)
                     created += 1
         write_into_json(datas, "paper_channels.json")
         print(
@@ -301,14 +301,14 @@ def hydra_main(cfg: DictConfig):
             channel_names = helper.get_channel_names()
 
             ## 1. delete paper channel
-            # for channel in channel_names:
-            #     if "paper-" in channel.lower():
-            #         helper.delete_channel(channel=channel)
+            for channel in channel_names:
+                if "paper-" in channel.lower():
+                    helper.delete_channel(channel=channel)
 
             ## 2. delete tutorial channel
-            for channel in channel_names:
-                if "tutorial-" in channel.lower():
-                    helper.delete_channel(channel=channel)
+            # for channel in channel_names:
+            #     if "tutorial-" in channel.lower():
+            #         helper.delete_channel(channel=channel)
 
             ## 3. delete workshop channel
             # for channel in channel_names:
